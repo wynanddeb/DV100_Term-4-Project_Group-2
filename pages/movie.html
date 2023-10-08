@@ -1,57 +1,85 @@
-<!-- Information about movie, include trailer, poster and box office info -->
-<!-- Has to be template and filled in through jquery and API -->
-<!-- Artwork of movie, title, directors, actors, synopsis, viewer rating, trailer, box office info -->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oldie Goldie</title>
 
-    <!-- Include Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="...">
-    
-    <!-- Include your custom CSS -->
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="/styles/movie.css" rel="stylesheet">
-</head>
-<body>
+  </head>
+  <body>
+
+    <!-- --------------------------------------------------------------- -->
     <!-- Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-          <img class="nav-img" src="/assets/movie/NavBackground.svg">
-          <img class="logo-img" src="../assets/movie/Logo.svg">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <a class="nav-link" href="../index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="../pages/browse.html">Browse</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="../pages/watchList.html">Watchlist</a>
-              </li>
-          </ul>
-          <button class="btn search" type="submit">Search</button>
-          <img class="user-icon" src="../assets/movie/User.svg">
+
+    <nav>
+      <div class="row nav">
+          <div class="col-12">
+              <img class="nav-img" src="/assets/movie/NavBackground.svg">
+              <img class="logo-img" src="../assets/movie/Logo.svg">
+              <div class="row frame-nav">
+                  <div class="col-1"></div>
+                  <div class="col-1">
+                      <a class="nav-link" href="../index.html"><h4>Home</h4></a>
+                  </div>
+                  <div class="col-1">
+                      <a class="nav-link" href="../pages/browse.html"><h4>Browse</h4></a>
+                  </div>
+                  <div class="col-1">
+                      <a class="nav-link" href="../pages/watchList.html"><h4>Watchlist</h4></a>
+                  </div>
+                  <div class="col-5"></div>
+                  <div class="col-1">
+                      <div>
+                          <button class="btn search" type="submit">Search</button>
+                      </div> 
+                  </div>
+                  <div class="col-1">
+                      <img class="user-icon" src="../assets/movie/User.svg">
+                  </div>
+                  <div class="col-1"></div>
+              </div>
+          </div>
       </div>
   </nav>
 
-    <!-- Hero Image -->
-    <div class="heroImage">
-        <div class="playButton">
-            <img src="../assets/movie/PlayButton.svg" width="100px" height="100px">
-        </div>
-        <div class="heroImageGradient"></div>
+  <div class="heroImage">
+    <div class="playButton">
+      <img src="../assets/movie/PlayButton.svg" width="100px" height="100px">
     </div>
+    <div class="heroImageGradient"></div>
+  </div>
 
-    <!-- Include Bootstrap 5 JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..."></script>
+  <div class="Moviebanner">
+      <img src="../assets/movie/Banner.svg">
+      <h1 class="banner-text">Indiana Jones</h1> <!-- Add the H1 tag here -->
+  </div>
+
+  <div class="movieContent">
+    <div class="row1">
+        <div class="MoviePoster"></div>
+        <div class="MovieText">
+            <h3>Raiders of the Lost Ark</h3>
+            <h6>1981 ‧ Adventure/Action ‧ 1h 55m</h6>
+            <h4>"The Lost City of Legends" is an exhilarating adventure film that takes audiences on an unforgettable journey deep into the heart of an uncharted jungle. When renowned archaeologist Dr. Evelyn Carter (played by a charismatic lead actress) stumbles upon an ancient map that hints at the existence of a mythical lost city, she assembles a diverse team of experts to embark on a perilous expedition.</h4>
+            <p>Director: Steven Spielberg</p>
+            <p>Box Office: $2,106,950</p>
+            <p>Actors: Steven Spielberg</p>
+            <p>IMDB: 8.4/10</p>
+        </div>
+    </div>
+    <div class="buttons">
+        <button type="button" class="btn wishlistBtn">Wishlist</button>
+        <button type="button" class="btn trailerBtn">Trailer</button>
+    </div>
+        
+  </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="/scripts/movie.js"></script>
 </body>
