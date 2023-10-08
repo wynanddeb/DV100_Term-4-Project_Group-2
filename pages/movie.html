@@ -1,0 +1,58 @@
+<!-- Information about movie, include trailer, poster and box office info -->
+<!-- Has to be template and filled in through jquery and API -->
+<!-- Artwork of movie, title, directors, actors, synopsis, viewer rating, trailer, box office info -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oldie Goldie</title>
+
+    <!-- Include Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="...">
+    
+    <!-- Include your custom CSS -->
+    <link href="/styles/movie.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+          <img class="nav-img" src="/assets/movie/NavBackground.svg">
+          <img class="logo-img" src="../assets/movie/Logo.svg">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../pages/browse.html">Browse</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../pages/watchList.html">Watchlist</a>
+              </li>
+          </ul>
+          <button class="btn search" type="submit">Search</button>
+          <img class="user-icon" src="../assets/movie/User.svg">
+      </div>
+  </nav>
+
+    <!-- Hero Image -->
+    <div class="heroImage">
+        <div class="playButton">
+            <img src="../assets/movie/PlayButton.svg" width="100px" height="100px">
+        </div>
+        <div class="heroImageGradient"></div>
+    </div>
+
+    <!-- Include Bootstrap 5 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..."></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="/scripts/movie.js"></script>
+</body>
+</html>
