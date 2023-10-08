@@ -1,12 +1,185 @@
-.circle{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: black;
-    margin: 0 auto;
-    margin-bottom: -50px;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Luckiest+Guy&display=swap');
+
+/* Global Styles */
+body{
+    background-color: #FFE6D0;
 }
 
-.nav-img{
-    background-image: url(../assets/Nav\ Background\ AI-01.svg);
+h1,h2,h3,h4,h5{
+    font-family: 'Luckiest Guy', cursive;
+    color: #FFE6D0;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+    color: #FFE6D0;
+}
+
+/* ------------------------------------------------------------------- */
+/* Nav Bar */
+
+.nav {
+    /* position: relative; */
+    z-index: 2;
+    width: 100.7%;
+    height: 70px;
+}
+
+.logo-img{
+    width: auto;
+    height: 135px;
+    margin: 0 auto;
+    margin-left: 46.12%;
+    margin-top: -144vh;
+}
+
+.frame-nav{
+   margin-top: -625px;
+}
+
+.user-icon{
+    margin-top: -15px;
+}
+
+.search{
+    background: #BB2525;
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    color: #FFE6D0; 
+    margin-top: -5px;
+    margin-left: -20px;
+    padding-right: 20px;
+}
+
+.nav-link{
+    border-bottom: none;
+}
+
+.nav-link:hover{
+    color:#BB2525;
+}
+
+/* Carousel */
+
+.carousel {
+    position: relative;
+    z-index: 1;
+}
+
+.background-img {
+    width: 100%;
+    height: 90vh;
+    background-position: center;
+    background-size: cover;
+    position: relative; 
+}
+
+.card {
+    background-color: #ffe6d000;
+    color: #FFE6D0;
+    margin-top: -45vh;
+    margin-left: 5%;
+    position: relative;
+    z-index: 2; 
+}
+
+.overlay {
+    width: 100%;
+    height: 90vh; 
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    z-index: 1; 
+}
+
+
+
+/* Movie Blocks */
+
+.movie-block{
+    width: 200px;
+    height: 270px;
+    border-radius: 20px;
+    transition: transform 0.3s, width 0.3s, height 0.3s;
+}
+
+.movie-block:hover{
+    transform: scale(1.1);
+}
+
+.movie-container {
+    position: relative;
+    width: 200px;
+    height: 270px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-container:hover {
+    transform: scale(1.1);
+}
+
+.movie-block {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out; 
+    padding: 20px;
+}
+
+.movie-container:hover .img-overlay {
+    opacity: 1;
+}
+
+
+/* Banners */
+
+.banner-container{
+    position: relative;
+}
+
+.banner{
+    width: auto;
+    height: 80px;
+}
+
+.banner2{
+    width: auto;
+    height: 80px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+/* Footer */
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #63AD9E;
+}
+
+.logo-footer{
+    width: auto;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.footer-content{
+    margin-top: 10px;
+}
+
+.footer-socials{
+    margin-top: 25px;
 }
