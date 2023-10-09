@@ -52,13 +52,16 @@ p{
     padding-right: 20px;
 }
 
-.nav-link{
-    border-bottom: none;
+.frame-nav h4{
+    color: #FFE6D0; 
+    text-decoration: none; 
 }
 
-.nav-link:hover{
-    color:#BB2525;
+.frame-nav h4:hover {
+    color: #BB2525; 
+    text-decoration: underline;
 }
+
 
 /* Carousel */
 
@@ -76,25 +79,24 @@ p{
 }
 
 .card {
-    background-color: #ffe6d000;
+    background-color: rgba(255, 255, 255, 0);
     color: #FFE6D0;
-    margin-top: -45vh;
+    margin-top: -35vh;
     margin-left: 5%;
     position: relative;
     z-index: 2; 
+    border: none;
 }
 
 .overlay {
     width: 100%;
-    height: 90vh; 
+    height: 100%; 
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 0; 
     left: 0; 
     z-index: 1; 
 }
-
-
 
 /* Movie Blocks */
 
@@ -142,6 +144,16 @@ p{
 
 .movie-container:hover .img-overlay {
     opacity: 1;
+}
+
+.btn-movies{
+    width: auto;
+    height: 30px;
+}
+
+.add-btn{
+    width: auto;
+    height: 30px;
 }
 
 
