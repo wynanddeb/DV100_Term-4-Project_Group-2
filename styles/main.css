@@ -19,11 +19,18 @@ p{
 /* Nav Bar */
 
 .nav {
-    /* position: relative; */
     z-index: 2;
     width: 100.7%;
     height: 70px;
 }
+
+.navbar{
+    z-index: 1;
+    width: 100.7%;
+    height: 70px;
+    margin-top: -10px;
+}
+
 
 .logo-img{
     width: auto;
@@ -61,6 +68,12 @@ p{
     color: #BB2525; 
     text-decoration: underline;
 }
+
+/* Filtering */
+.filtering{
+    z-index: 1;
+}
+
 
 
 /* Carousel */
@@ -201,6 +214,7 @@ footer{
     background-color: #F6E9DC;
     color: black;
     border-color: #BB2525;
+    margin-bottom: 10px;
 }
 
 .custom-dropdown .dropdown-menu {
