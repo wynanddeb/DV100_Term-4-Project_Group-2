@@ -12,13 +12,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../styles/watchlist.css">
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
   <body>
 
-    <div id="title-container">
-      <img src="../assets/Movie Title.svg" alt="image not loading ">
-    </div>
+    <!--Nav Bar  -->
+    <nav class="nav">
+      <div class="row nav">
+          <div class="col-12">
+              <img class="nav-img" src="../assets/Nav Background AI-01.svg">
+              <img class="logo-img" src="../assets/Logo.svg">
+              <div class="row frame-nav">
+                  <div class="col-1"></div>
+                  <div class="col-1">
+                    <a class="nav-link" href="../index.html"><h4>Home</h4></a>
+                  </div>
+                  <div class="col-1">
+                      <a class="nav-link" href="../pages/browse.html"><h4>Browse</h4></a>
+                  </div>
+                  <div class="col-1">
+                      <a class="nav-link" href="../pages/watchList.html"><h4>Watchlist</h4></a>
+                  </div>
+                  <div class="col-5"></div>
+                  <div class="col-1">
+                      <div>
+                          <button class="btn search" type="submit">Search</button>
+                      </div> 
+                  </div>
+                  <div class="col-1">
+                      <img class="user-icon" src="../assets/User  icon.svg">
+                  </div>
+                  <div class="col-1"></div>
+              </div>
+          </div>
+      </div>
+  </nav>
 
+  <!-- Banner -->
+  <div class="container mt-5 text-center">
+    <div class="banner-container">
+      <img class="banner" src="../assets/Watchlist.svg">
+      <h2>Top Rated Movies</h2>
+    </div>
+  </div>
+
+    <!-- Cards -->
     <div id="cards-container">
 
       <div class="card mb-3" style="background-color: #0C3948;">
@@ -135,13 +173,6 @@
     </div>
 
     
-
-
-
-
-
-
-
 
   <!--Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> 
