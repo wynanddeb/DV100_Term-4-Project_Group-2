@@ -183,3 +183,34 @@ footer{
 .footer-socials{
     margin-top: 25px;
 }
+
+/*filter*/
+.custom-dropdown .btn {
+    background-color: #F6E9DC;
+    color: black;
+    border-color: #BB2525;
+}
+
+.custom-dropdown .dropdown-menu {
+    background-color: #F6E9DC;
+}
+
+.custom-dropdown .dropdown-item {
+    color: black;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: #BB2525;
+    color: white;
+}
+
+.custom-button {
+    background-color: #F6E9DC;
+    border-color: #BB2525;
+    color: black;
+}
+
+.custom-button:hover {
+    background-color: #BB2525;
+    color: white;
+}
