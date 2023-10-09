@@ -3,23 +3,23 @@
 
 /* Global Styles */
 
-h1, h2, h3, h4, {
-    font-family; 'Luckiest Guy', cursive;
-}
-
-
 body{
     background-color: #FFE6D0;
 }
 
-nav {
-    width: 100%;
+h1,h2,h3,h4,h5{
+    font-family: 'Luckiest Guy', cursive;
+    color: #FFE6D0;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+    color: #FFE6D0;
 }
 
 .nav {
-    position: relative;
-    z-index: 1;
-    width: 100%;
+    z-index: 2;
+    width: 100.7%;
     height: 70px;
 }
 
@@ -50,14 +50,15 @@ nav {
     padding-right: 20px;
 }
 
-.nav-link{
-    border-bottom: none;
+.frame-nav h4{
+    color: #FFE6D0; 
+    text-decoration: none; 
 }
 
-.nav-link:hover{
-    color:#BB2525;
+.frame-nav h4:hover {
+    color: #BB2525; 
+    text-decoration: underline;
 }
-
 .heroImage {
     height: 100vh;
     background-image: url(/assets/movie/Movie.png);
@@ -223,4 +224,25 @@ nav {
     font-weight: 700;
     line-height: normal;
     padding: 8px 40px; 
+}
+
+/* Footer */
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #63AD9E;
+}
+
+.logo-footer{
+    width: auto;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.footer-content{
+    margin-top: 10px;
+}
+
+.footer-socials{
+    margin-top: 25px;
 }
