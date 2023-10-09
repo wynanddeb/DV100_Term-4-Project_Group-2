@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Luckiest+Guy&display=swap');
+
+/* Global Styles */
+h1,h2,h3,h4,h5{
+    font-family: 'Luckiest Guy', cursive;
+    color: #FFE6D0;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+    color: #FFE6D0;
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -122,14 +135,16 @@ i{
     padding-right: 20px;
 }
 
-.nav-link{
-    border-bottom: none;
-    color:#FFE6D0
+.frame-nav h4{
+    color: #FFE6D0; 
+    text-decoration: none; 
 }
 
-.nav-link:hover{
-    color:#BB2525;
+.frame-nav h4:hover {
+    color: #BB2525; 
+    text-decoration: underline;
 }
+
 
 footer{
     width: 100%;
@@ -149,4 +164,21 @@ footer{
 
 .footer-socials{
     margin-top: 25px;
+}
+
+/* banner */
+.banner-container{
+    position: relative;
+}
+
+.banner{
+    width: auto;
+    height: 80px;
+}
+
+.banner2{
+    width: auto;
+    height: 80px;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
