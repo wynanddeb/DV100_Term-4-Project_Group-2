@@ -50,38 +50,121 @@
 
   <!--Modal-->
 
-  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Show a second modal and hide this one with the button below.
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+  <!--Sign up modal-->
+  <div style="float: right; margin-right: 20px; margin-top: -50px;">
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel" style="color: #BB2525; font-family: sans-serif, luckiest guy; font-size: 48pt;">Welcome to OldieGoldie</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="color: #007297; font-family: sans-serif, LuckiestGuy; background-color: #FFE6D0;">
+            <div style="color: #BB2525; padding-left: 5pts; padding-right: 5pts; text-align: center;">
+              <p><b>CREATE YOUR ACCOUNT NOW TO EXPERIENCE ALL OLDIE GOLDIE HAS TO OFFER:</b></p>
+            </div>
+
+            <!--Sign up form items-->
+            <label for="formGroupExampleInput" class="form-label" style="margin-bottom: 2px; margin-top: 10px;"><b>Name:</b></label>
+            <div class="card" style="background-color: #FFE6D0; border-color: #FFE6D0;">
+              <img src="../assets/signInForm.svg" class="card-img" alt="form background">
+              <div class="card-img-overlay">
+                <div class="mb-3" style="align-content: center; margin-bottom: 10px; margin-top: -6px;">
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+                </div>
+              </div>
+            </div>
+
+            <label for="formGroupExampleInput" class="form-label" style="margin-bottom: 2px; margin-top: 10px;"><b>Email:</b></label>
+            <div class="card" style="background-color: #FFE6D0; border-color: #FFE6D0;">
+              <img src="../assets/signInForm.svg" class="card-img" alt="form background">
+              <div class="card-img-overlay">
+                <div class="mb-3" style="align-content: center; margin-bottom: 10px; margin-top: -6px;">
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email">
+                </div>
+              </div>
+            </div>
+
+            <label for="formGroupExampleInput" class="form-label" style="margin-bottom: 2px; margin-top: 10px;"><b>Password:</b></label>
+            <div class="card" style="background-color: #FFE6D0; border-color: #FFE6D0;">
+              <img src="../assets/signInForm.svg" class="card-img" alt="form background">
+              <div class="card-img-overlay">
+                <div class="mb-3" style="align-content: center; margin-bottom: 10px; margin-top: -6px;">
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Password">
+                </div>
+              </div>
+            </div>
+
+            <label for="formGroupExampleInput" class="form-label" style="margin-bottom: 2px; margin-top: 10px;"><b>Confirm Password:</b></label>
+            <div class="card" style="background-color: #FFE6D0; border-color: #FFE6D0;">
+              <img src="../assets/signInForm.svg" class="card-img" alt="form background">
+              <div class="card-img-overlay">
+                <div class="mb-3" style="align-content: center; margin-bottom: 10px; margin-top: -6px;">
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Confirm Password">
+                </div>
+              </div>
+            </div>
+            <div class="Link" style="margin-top: 30px; margin-bottom: 10px;">
+              <p>Already have an account?</p>
+              <button type="button" class="btn btn-link" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Sign In</button>
+            </div>
+          </div>
+          <div class="modal-footer" style="align-content: center;">
+            <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" style="border-color: white; background-color: white;">
+              <img src="../assets/signIn-btn.svg" style="width: 150px; height: 75px;">
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Hide this modal and show the first with the button below.
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+
+    <!--Sign in modal-->
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2" style="color: #BB2525; font-family: sans-serif, luckiest guy; font-size: 48pt;">Welcome Back to OldieGoldie</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="background-color: #FFE6D0; color: #007297;">
+            <div style="color: #BB2525; text-align: center;">
+              <p><b>WELCOME BACK! LOG INTO YOUR ACCOUNT:</b></p>
+            </div>
+
+            <!--Sign In form items-->
+            <label for="formGroupExampleInput" class="form-label" style="margin-bottom: 2px; margin-top: 10px;"><b>Name:</b></label>
+            <div class="card" style="background-color: #FFE6D0; border-color: #FFE6D0;">
+              <img src="../assets/signInForm.svg" class="card-img" alt="form background">
+              <div class="card-img-overlay">
+                <div class="mb-3" style="align-content: center; margin-bottom: 10px; margin-top: -6px;">
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+                </div>
+              </div>
+            </div>
+
+            <label for="formGroupExampleInput" class="form-label" style="margin-bottom: 2px; margin-top: 10px;"><b>Password:</b></label>
+            <div class="card" style="background-color: #FFE6D0; border-color: #FFE6D0;">
+              <img src="../assets/signInForm.svg" class="card-img" alt="form background">
+              <div class="card-img-overlay">
+                <div class="mb-3" style="align-content: center; margin-bottom: 10px; margin-top: -6px;">
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Password">
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button data-bs-target="#exampleModalToggle" data-bs-toggle="modal" style="border-color: white; background-color: white;">
+              <img src="../assets/signUp-btn.svg" style="width: 150px; height: 75px;">
+            </button>
+          </div>
         </div>
       </div>
     </div>
+
+    <!--User icon log in-->
   </div>
+
   
 
 
