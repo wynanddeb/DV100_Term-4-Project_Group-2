@@ -16,7 +16,7 @@ body{
     gap: 5%;
 }
 
-#title-container{
+.banner-container{
 
     width: 100%;
     height: fit-content;
@@ -25,7 +25,7 @@ body{
 
 }
 
-#title-container>img{
+.banner-container>img{
     width: 80%;
     height: auto;
     flex-grow: 1;
