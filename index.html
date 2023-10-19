@@ -12,36 +12,121 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg" style="background-color:#FF6969;">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="assets/Logo.svg" alt="Logo" width="70" height="70" class="d-inline-block align-text-top">
-        
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html"><h4>Home</h4></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/browse.html"><h4>Browse</h4></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/watchlist.html"><h4>Watchlist</h4></a>
-          </li>
-        </ul>
-        <form class="d-flex align-items-center" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <img src="assets/User  icon.svg">
-        </form>
+  <header class="header">
+
+    <nav class="nav">
+      <div class="row nav">
+          <div class="col-12">
+              <img class="nav-img" src="assets/Nav Background AI-01.svg">
+              <img class="logo-img" src="assets/Logo.svg">
+              <div class="row frame-nav">
+                  <div class="col-1"></div>
+                  <div class="col-1">
+                    <a class="nav-link" href="index.html"><h4>Home</h4></a>
+                  </div>
+                  <div class="col-1">
+                      <a class="nav-link" href="pages/browse.html"><h4>Browse</h4></a>
+                  </div>
+                  <div class="col-1">
+                      <a class="nav-link" href="pages/watchList.html"><h4>Watchlist</h4></a>
+                  </div>
+                  <div class="col-5"></div>
+                  <div class="col-1">
+                      <div>
+                          <button class="btn search" type="submit">Search</button>
+                      </div> 
+                  </div>
+                  <div class="col-1">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                      <img src="assets/User  icon.svg"> 
+                    </button>
+                  </div>
+                  <div class="col-1"></div>
+              </div>
+          </div>
       </div>
     </div>
   </nav>
 
+  <!--------------------------------------------------------------------------------------------->
+  <!--Modal-->
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel"><b>Welcome To OldieGoldie</b></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!--form-->
+        <div class="modal-body" style="background-color: #FFE6D0;">
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label"><b>Name:</b></label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label"><b>Email:</b></label>
+            <input type="email" class="form-control" id="email" placeholder="Email">
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label"><b>Password:</b></label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label"><b>Confirm Password:</b></label>
+            <input type="password" class="form-control" id="password" placeholder="Confirm Password">
+          </div>
+          <div class="Link" style="margin-top: 30px; margin-bottom: 10px; margin-left: 10px;">
+            <label>Already have an account?
+              <button type="button" class="btn btn-link" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Sign In</button>
+            </label>
+          </div>
+        </div>
+        
+
+        <!--Footer-->
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" style="border-color: white; background-color: white;">
+            <img src="assets/signIn-btn.svg">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal two-->
+  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2"><b>Welcome Back to OldieGoldie</b></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!--Form-->
+        <div class="modal-body" style="background-color: #FFE6D0;">
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label"><b>Name:</b></label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label"><b>Password:</b></label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+        </div>
+
+        <!--Footer-->
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" style="border-color: white; background-color: white;">
+            <img src="assets/signUp-btn.svg">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   
+
   <!-- Carousel -->
 
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -416,6 +501,15 @@
         </div>
        
   </footer>
+
+        <!--Modal button-->
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+          <img src="assets/User  icon.svg"> 
+        </button>
+    </footer>
+      
+     
+
 
      <!-- Javascript -->
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
