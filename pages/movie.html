@@ -13,37 +13,34 @@
 
     <!-- --------------------------------------------------------------- -->
     <!-- Nav -->
-    <nav class="nav">
-        <div class="row nav">
-            <div class="col-12">
-                <img class="nav-img" src="../assets/Nav Background AI-01.svg">
-                <img class="logo-img" src="../assets/Logo.svg">
-                <div class="row frame-nav">
-                    <div class="col-1"></div>
-                    <div class="col-1">
-                      <a class="nav-link" href="../index.html"><h4>Home</h4></a>
-                    </div>
-                    <div class="col-1">
-                        <a class="nav-link" href="../pages/browse.html"><h4>Browse</h4></a>
-                    </div>
-                    <div class="col-1">
-                        <a class="nav-link" href="../pages/watchlist.html"><h4>Watchlist</h4></a>
-                    </div>
-                    <div class="col-5"></div>
-                    <div class="col-1">
-                        <div>
-                            <button class="btn search" type="submit">Search</button>
-                        </div> 
-                    </div>
-                    <div class="col-1">
-                        <img class="user-icon" src="../assets/User  icon.svg">
-                        <button class="img-overlay" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"></button>
-                    </div>
-                    <div class="col-1"></div>
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:#FF6969;">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="../assets/Logo.svg" alt="Logo" width="70" height="70" class="d-inline-block align-text-top">
+            
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html"><h4>Home</h4></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/browse.html"><h4>Browse</h4></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/watchlist.html"><h4>Watchlist</h4></a>
+              </li>
+            </ul>
+            <form class="d-flex align-items-center" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <img src="../assets/User  icon.svg">
+            </form>
+          </div>
         </div>
-    </nav>
+      </nav>
     
   <div class="heroImage">
     <div class="playButton">
@@ -78,36 +75,44 @@
   </div>
 
   <!-- Footer -->
-  <footer>
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-2">
-          <img class="logo-footer" src="../assets/Logo.svg">
-         </div>
-         <div class="col-1"></div>
-        <div class="col-1 footer-content">About Us <br> Contact Us</div>
-        <div class="col-2 footer-content"> Terms & Conditions <br> Privacy Policy <br> Services</div>
-        <div class="col-1"></div>
-        <div class="col-1"></div>
-        <div class="col-2">
-            <div class="row footer-socials">
-                <div class="col-3">
-                    <img src="../assets/insta icon.svg">
+  <footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-5">
+                    <div class="single-cta">
+                        <div class="cta-text">
+                            <h4>OldieGoldie</h4>
+                            <img class="logo-footer" src="../assets/Logo.svg">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <img src="../assets/twitter icon.svg">
+                <div class="col-xl-4 col-md-4 mb-5">
+                    <div class="single-cta">
+                        <div class="cta-text">
+                            <h4>Useful Links</h4>
+                            <p>About Us</p>
+                            <p>Contact Us</p>
+                            <p>Services</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <img src="../assets/youtube icon.svg">
-                </div>
-                <div class="col-3">
-                    <img src="../assets/facebook icon.svg">
+                <div class="col-xl-4 col-md-4 mb-5">
+                    <div class="single-cta">
+                        <div class="cta-text">
+                            <h4>Socials</h4>
+                            <div class="row">
+                              <img class="footer-socials" src="../assets/twitter icon.svg">
+                              <img class="footer-socials" src="../assets/insta icon.svg">
+                              <img class="footer-socials" src="../assets/facebook icon.svg">
+                              <img class="footer-socials" src="../assets/youtube icon.svg">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-1"></div>
-    </div>
-</footer>
+    </footer>
   
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

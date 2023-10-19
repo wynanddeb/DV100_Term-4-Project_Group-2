@@ -101,69 +101,72 @@ i{
     margin-left: 5px;
 }
 
-.nav {
-    /* position: relative; */
-    z-index: 2;
-    width: 100.7%;
-    height: 70px;
+nav{
+    background-color: #FF6969;
+    border-bottom: #BB2525;
 }
 
-.logo-img{
+.form-control{
+    background-color: #BB2525;
+    height: 50px;
+    border-radius: 25px;
+    color:#F6E9DC;
+    font-family: 'Lato', sans-serif;
+    border: none;
+}
+
+.nav-link h4{
+    color:#BB2525;
+    margin-bottom: -8px;
+}
+
+.nav-link h4:hover{
+    color:#710d0d;
+}
+
+
+/* Footer */
+.footer-socials{
     width: auto;
-    height: 135px;
-    margin: 0 auto;
-    margin-left: 46.12%;
-    margin-top: -144vh;
-}
-
-.frame-nav{
-   margin-top: -625px;
-}
-
-.user-icon{
-    margin-top: -15px;
-}
-
-.search{
-    background: #BB2525;
-    height: 40px;
-    width: 150px;
-    border-radius: 20px;
-    color: #FFE6D0; 
-    margin-top: -5px;
-    margin-left: -20px;
-    padding-right: 20px;
-}
-
-.frame-nav h4{
-    color: #FFE6D0; 
-    text-decoration: none; 
-}
-
-.frame-nav h4:hover {
-    color: #BB2525; 
-    text-decoration: underline;
-}
-
-
-footer{
-    width: 100%;
-    height: 100px;
-    background-color: #63AD9E;
+    height: 50px;
 }
 
 .logo-footer{
     width: auto;
     height: 100px;
-    margin: 0 auto;
 }
 
-.footer-content{
-    margin-top: 10px;
+ul {
+    margin: 0px;
+    padding: 0px;
 }
 
-.footer-socials{
-    margin-top: 25px;
+.footer-section {
+  background: #63AD9E;
+  position: relative;
+}
+
+.footer-cta {
+  border-bottom: 1px solid #BB2525;
+}
+
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+
+.cta-text h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
 }
 
 /* banner */
@@ -181,4 +184,54 @@ footer{
     height: 80px;
     margin-bottom: 50px;
     margin-top: 30px;
+}
+
+/* Banners */
+
+.banner-container{
+    position: relative;
+}
+
+.banner{
+    width: auto;
+    height: 80px;
+}
+
+.banner2{
+    width: auto;
+    height: 80px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+@media (max-width: 992px) {
+    .banner{
+        width: auto;
+        height: 55px;
+        margin-bottom: -20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner{
+        width: auto;
+        height: 45px;
+        margin-bottom: -20px;
+        margin-left: -40px;
+    }
+}
+
+.banner-container h1{
+    opacity: 0;
+}
+
+@media (max-width: 575px){
+    .banner{
+        opacity: 0;
+        width: 20px;
+    }
+    .banner-container h1{
+        color:#BB2525;
+        opacity: 1;
+    }
 }

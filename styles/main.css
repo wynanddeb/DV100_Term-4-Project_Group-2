@@ -17,88 +17,40 @@ p{
 
 /* ------------------------------------------------------------------- */
 /* Nav Bar */
-
-.nav {
-    z-index: 2;
-    width: 100.7%;
-    height: 70px;
+nav{
+    border-bottom: solid 3px #BB2525;
 }
 
-.navbar{
-    z-index: 1;
-    width: 100.7%;
-    height: 70px;
-    margin-top: -10px;
+.form-control{
+    background-color: #BB2525;
+    height: 50px;
+    border-radius: 25px;
+    color:#F6E9DC;
+    font-family: 'Lato', sans-serif;
+    border: none;
 }
 
-
-.logo-img{
-    width: auto;
-    height: 135px;
-    margin: 0 auto;
-    margin-left: 46.12%;
-    margin-top: -144vh;
+.nav-link h4{
+    color:#F6E9DC;
+    margin-bottom: -8px;
 }
 
-.frame-nav{
-   margin-top: -625px;
+.nav-link h4:hover{
+    color:#BB2525;
 }
-
-.user-icon{
-    margin-top: -15px;
-}
-
-.search{
-    background: #BB2525;
-    height: 40px;
-    width: 150px;
-    border-radius: 20px;
-    color: #FFE6D0; 
-    margin-top: -5px;
-    margin-left: -20px;
-    padding-right: 20px;
-}
-
-.frame-nav h4{
-    color: #FFE6D0; 
-    text-decoration: none; 
-}
-
-.frame-nav h4:hover {
-    color: #BB2525; 
-    text-decoration: underline;
-}
-
-/* Filtering */
-.filtering{
-    z-index: 1;
-}
-
-
 
 /* Carousel */
 
-.carousel {
+.carousel-item{
     position: relative;
     z-index: 1;
 }
 
-.background-img {
+.img-fluid{
     width: 100%;
-    height: 90vh;
     background-position: center;
     background-size: cover;
     position: relative; 
-}
-
-.card {
-    background-color: rgba(255, 255, 255, 0);
-    color: #FFE6D0;
-    margin-top: -35vh;
-    margin-left: 5%;
-    position: relative;
-    z-index: 2; 
-    border: none;
 }
 
 .overlay {
@@ -111,63 +63,141 @@ p{
     z-index: 1; 
 }
 
-/* Movie Blocks */
 
-.movie-block{
-    width: 200px;
-    height: 270px;
+.card {
+    background-color: rgba(255, 255, 255, 0);
+    color: #FFE6D0;
+    position: relative;
+    z-index: 2; 
+    border: none;
+}
+
+.background-img {
+    /* For Desktop */
+    width: 100%;
+    object-fit: cover;
+    height: 100vh; 
+}
+
+@media (max-width: 768px) {
+    /* For tablets and smaller screens */
+    .background-img {
+        height: 70vh; 
+    }
+}
+
+@media (max-width: 576px) {
+    /* For mobile devices */
+    .background-img {
+        height: 60vh;
+    }
+}
+
+.card .img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .card .img-fluid {
+        max-width: 40%; 
+        height: auto;
+    }
+}
+
+
+/* Movie Blocks */
+/* Default Styles (for mobile and tablet) */
+.movie-block {
+    width: 300px;
+    height: 340px;
     border-radius: 20px;
     transition: transform 0.3s, width 0.3s, height 0.3s;
-}
-
-.movie-block:hover{
+  }
+  
+  .movie-block:hover {
     transform: scale(1.1);
-}
-
-.movie-container {
+  }
+  
+  .movie-container {
     position: relative;
-    width: 200px;
-    height: 270px;
+    width: 300px;
+    height: 340px;
     border-radius: 20px;
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
-}
-
-.movie-container:hover {
+  }
+  
+  .movie-container:hover {
     transform: scale(1.1);
-}
-
-.movie-block {
+  }
+  
+  .movie-block {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-}
-
-.img-overlay {
+    object-fit: cover;
+  }
+  
+  .img-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); 
-    opacity: 0; 
-    transition: opacity 0.3s ease-in-out; 
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
     padding: 20px;
-}
-
-.movie-container:hover .img-overlay {
+  }
+  
+  .movie-container:hover .img-overlay {
     opacity: 1;
-}
-
-.btn-movies{
+  }
+  
+  .btn-movies {
     width: auto;
     height: 30px;
-}
-
-.add-btn{
+  }
+  
+  .add-btn {
     width: auto;
     height: 30px;
-}
+  }
+  
+  /* Media Query for Desktop */
+  @media (min-width: 1024px) {
+    .movie-container {
+      width: 200px; /* Adjust the size as needed for desktop */
+      height: 260px; /* Adjust the size as needed for desktop */
+    }
+  
+    .movie-block {
+      width: 200px; /* Adjust the size as needed for desktop */
+      height: 260px; /* Adjust the size as needed for desktop */
+    }
+  }
+
+  /* media Query for  */
+  @media (max-width: 1023px) {
+    .movie-container {
+      width: 180px; /* Adjust the size as needed for desktop */
+      height: 240px; /* Adjust the size as needed for desktop */
+    }
+  
+    .movie-block {
+      width: 180px; /* Adjust the size as needed for desktop */
+      height: 240px; /* Adjust the size as needed for desktop */
+    }
+
+    .banner{
+        width: auto;
+        height: 45px;
+        margin-bottom: -20px;
+        margin-left: -40px;
+    }
+  }
+  
+
 
 
 /* Banners */
@@ -188,26 +218,83 @@ p{
     margin-top: 30px;
 }
 
+@media (max-width: 992px) {
+    .banner{
+        width: auto;
+        height: 55px;
+        margin-bottom: -20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner{
+        width: auto;
+        height: 45px;
+        margin-bottom: -20px;
+        margin-left: -40px;
+    }
+}
+
+.banner-container h1{
+    opacity: 0;
+}
+
+@media (max-width: 575px){
+    .banner{
+        opacity: 0;
+        width: 20px;
+    }
+    .banner-container h1{
+        color:#BB2525;
+        opacity: 1;
+    }
+}
+
 /* Footer */
-footer{
-    width: 100%;
-    height: 100px;
-    background-color: #63AD9E;
+.footer-socials{
+    width: auto;
+    height: 50px;
 }
 
 .logo-footer{
     width: auto;
     height: 100px;
-    margin: 0 auto;
 }
 
-.footer-content{
-    margin-top: 10px;
+ul {
+    margin: 0px;
+    padding: 0px;
 }
 
-.footer-socials{
-    margin-top: 25px;
+.footer-section {
+  background: #63AD9E;
+  position: relative;
 }
+
+.footer-cta {
+  border-bottom: 1px solid #BB2525;
+}
+
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+
+.cta-text h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+
 
 /*filter*/
 .custom-dropdown .btn {
