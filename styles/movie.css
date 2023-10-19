@@ -117,7 +117,7 @@ p{
     background-blend-mode: lighten, normal;
     box-shadow: -4px 4px 4px 0px rgba(0, 0, 0, 0.30);
     width: 85%;
-    height: 380px;
+    height: fit-content;
     flex-shrink: 0;
     margin: 5% auto 2%;
 }
@@ -133,10 +133,8 @@ p{
 }
 
 .MoviePoster{
-    background-image: url(../assets/movie/MoviePoster.png);
     width: 15%;
     height: 100%;
-    background-size: cover;
     border-radius: 2%;
 }
 
@@ -245,4 +243,12 @@ footer{
 
 .footer-socials{
     margin-top: 25px;
+}
+
+.container{
+    margin: 0 0;
+}
+
+.row{
+    width: 100%;
 }
