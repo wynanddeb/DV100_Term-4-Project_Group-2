@@ -246,3 +246,11 @@ footer{
 .footer-socials{
     margin-top: 25px;
 }
+
+.container{
+    margin: 0 0;
+}
+
+.row{
+    width: 100%;
+}
