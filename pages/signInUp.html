@@ -15,37 +15,44 @@
 
     <!--Navbar-->
     <header class="header">
-
-      <nav class="nav">
-        <div class="row nav">
-            <div class="col-12">
-                <img class="nav-img" src="assets/Nav Background AI-01.svg">
-                <img class="logo-img" src="assets/Logo.svg">
-                <div class="row frame-nav">
-                    <div class="col-1"></div>
-                    <div class="col-1">
-                        <div class="nav-link"><a href="index.html"><h4>Home</h4></a></div>
-                    </div>
-                    <div class="col-1">
-                        <a class="nav-link" href="pages/browse.html"><h4>Browse</h4></a>
-                    </div>
-                    <div class="col-1">
-                        <a class="nav-link" href="pages/watchList.html"><h4>Watchlist</h4></a>
-                    </div>
-                    <div class="col-5"></div>
-                    <div class="col-1">
-                        <div>
-                            <button class="btn search" type="submit">Search</button>
-                        </div> 
-                    </div>
-                    <div class="col-1">
-                        <img class="user-icon" src="assets/User  icon.svg">
-                    </div>
-                    <div class="col-1"></div>
-                </div>
-            </div>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                <img src="../assets/User  icon.svg"> 
+              </button>
+            </form>
+          </div>
         </div>
-    </nav>
+      </nav>
         
     <!--Modal-->
 
@@ -79,7 +86,7 @@
               <img src="../assets/signInForm.svg" class="card-img" alt="form background">
               <div class="card-img-overlay">
                 <div class="mb-3" style="align-content: center; margin-bottom: 10px; margin-top: -6px;">
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email">
+                  <input type="email" class="form-control" id="email" placeholder="Email" required>
                 </div>
               </div>
             </div>
@@ -89,7 +96,7 @@
               <img src="../assets/signInForm.svg" class="card-img" alt="form background">
               <div class="card-img-overlay">
                 <div class="mb-3" style="align-content: center; margin-bottom: 10px; margin-top: -6px;">
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Password">
+                  <input type="password" class="form-control" id="password" placeholder="Password">
                 </div>
               </div>
             </div>
@@ -99,7 +106,7 @@
               <img src="../assets/signInForm.svg" class="card-img" alt="form background">
               <div class="card-img-overlay">
                 <div class="mb-3" style="align-content: center; margin-bottom: 10px; margin-top: -6px;">
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Confirm Password">
+                  <input type="password" class="form-control" id="password" placeholder="Confirm Password">
                 </div>
               </div>
             </div>
@@ -108,11 +115,17 @@
               <button type="button" class="btn btn-link" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Sign In</button>
             </div>
           </div>
+
+          <!--Modal footer sign up button-->
           <div class="modal-footer" style="align-content: center;">
-            <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" style="border-color: white; background-color: white;">
+            <button class="btn btn-light mt-4" type="submit" >
               <img src="../assets/signIn-btn.svg" style="width: 150px; height: 75px;">
             </button>
           </div>
+
+          <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" style="border-color: white; background-color: white;">
+            <img src="../assets/signIn-btn.svg" style="width: 150px; height: 75px;">
+          </button>
         </div>
       </div>
     </div>
@@ -146,7 +159,7 @@
               <img src="../assets/signInForm.svg" class="card-img" alt="form background">
               <div class="card-img-overlay">
                 <div class="mb-3" style="align-content: center; margin-bottom: 10px; margin-top: -6px;">
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Password">
+                  <input type="password" class="form-control" id="password" placeholder="Password">
                 </div>
               </div>
             </div>
@@ -164,7 +177,9 @@
     <!--User icon log in-->
   </div>
   <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>
-
+  <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+    <img src="../assets/User  icon.svg"> 
+  </button>
   
      <!-- Javascript -->
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
