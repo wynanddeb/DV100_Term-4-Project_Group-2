@@ -16,7 +16,7 @@ function createMovieCard(movie) {
                                 <img class="btn-movies" src="assets/Retro-btn.svg">
                             </div>
                             <div class="col-4">
-                                <img class="add-btn" src="assets/Add-btn.svg">
+                                <img class="add-btn" src="assets/Add-btn.svg" onclick="addToWatchList('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
                             </div>
                         </div>
                     </button>
@@ -55,13 +55,21 @@ $.ajax({
                     console.log(`Director: ${director ? director.name : "N/A"}`);
                     console.log(`Description: ${movieDetails.overview}`);
                     console.log(`Viewer Rating: ${movie.vote_average}`);
+                    
+                    const genresArr = [];
+
+                    movieDetails.genres.forEach(function(genre){
+                        genresArr.push(genre.name);
+                    });
 
                     // Create the movie card HTML and append it to the container
                     const movieCard = createMovieCard({
                         title: movie.title,
                         director: director ? director.name : "N/A",
                         vote_average: movie.vote_average,
-                        poster_path: movie.poster_path
+                        poster_path: movie.poster_path,
+                        description: movieDetails.overview,
+                        genres: genresArr
                     });
 
                     // Append the card to the container
@@ -85,4 +93,25 @@ $.ajax({
 });
 
 
+function addToWatchList(title,director,rating, description, genres, imageurl){
+    console.log(genres)
+    const temp = {
+        'title':title,
+        'director':director,
+        'rating':rating,
+        'description':description,
+        'genres':genres,
+        'imgUrl':imageurl
+    }
 
+    if(localStorage.getItem('watchList') === null){
+        localStorage.setItem('watchList',JSON.stringify([temp]));
+    }
+    else{
+        const watchList = JSON.parse(localStorage.getItem('watchList'));
+        watchList.push(temp);
+        localStorage.setItem('watchList',JSON.stringify(watchList));
+    }
+ 
+
+}
