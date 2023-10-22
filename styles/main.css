@@ -327,3 +327,10 @@ ul {
     background-color: #BB2525;
     color: white;
 }
+
+.custom-dropdown .btn:active,
+.custom-dropdown .btn:focus {
+    background-color: #BB2525;
+    color: white;
+}
+
