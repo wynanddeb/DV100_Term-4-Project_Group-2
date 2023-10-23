@@ -14,7 +14,7 @@ function createMovieCard(movie) {
                         <div class="row movie-links">
                             <div class="col-8">
                                 <a href="pages/movie.html">
-                                    <img class="btn-movies" src="assets/Retro-btn.svg" onclick="c('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
+                                    <img class="btn-movies" src="assets/Retro-btn.svg" onclick="addToLocalStorageAndGoToMovie('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
                                 </a>
                             </div>
                             <div class="col-4">
@@ -72,7 +72,7 @@ $.ajax({
 
         // Create the carousel items
         const carouselInner = $('#movieCarousel .carousel-inner');
-        carouselInner.empty();
+        // carouselInner.empty();
 
         movies.forEach(function (movie, index) {
             console.log(`Movie ${index + 1}:`);
@@ -126,8 +126,6 @@ $.ajax({
         console.log('Error:', error);
     }
 });
-<<<<<<< Updated upstream
-
 
 function addToWatchList(title,director,rating, description, genres, imageurl){
     console.log(genres)
@@ -150,4 +148,34 @@ function addToWatchList(title,director,rating, description, genres, imageurl){
     }
  
 
+}
+
+function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice) {
+    // Create an object with the movie data
+    const temp = {
+        'title': title,
+        'director': director,
+        'rating': rating,
+        'description': description,
+        'genres': genres,
+        'imgUrl': imageurl,
+        'actors': cast,
+        'box-office': boxOffice
+    };
+
+    // Check if local storage already contains a 'movie' key
+    if (localStorage.getItem('movie') === null) {
+        // If not, create a new array and add the movie data
+        localStorage.setItem('movie', JSON.stringify([temp]));
+    } else {
+        // If it exists, retrieve the existing data, add the new movie data, and update local storage
+        const movie = JSON.parse(localStorage.getItem('movie'));
+        movie.push(temp);
+        localStorage.setItem('movie', JSON.stringify(movie));
+    }
+
+    // Redirect to the website
+    window.location.href = 'pages/movie.html';
+
+    
 }

@@ -33,6 +33,8 @@ function createMovieCard(title, director, rating, description, genres, imgUrl, c
 function loadData() {
 
     document.getElementById("card-container").innerHTML = "";
+    
+    
 
     if (localStorage.getItem("movie") === null) {
         return;
@@ -46,6 +48,7 @@ function loadData() {
         document.getElementById("card-container").appendChild(movieCard);
 
     });
+    document.getElementById("card-container").reset();
 }
 
 $(document).ready(function() {
