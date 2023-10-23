@@ -14,46 +14,40 @@
 
   <header class="header">
 
-    <nav class="nav">
-      <div class="row nav">
-          <div class="col-12">
-              <img class="nav-img" src="assets/Nav Background AI-01.svg">
-              <img class="logo-img" src="assets/Logo.svg">
-              <div class="row frame-nav">
-                  <div class="col-1"></div>
-                  <div class="col-1">
-                    <a class="nav-link" href="index.html"><h4>Home</h4></a>
-                  </div>
-                  <div class="col-1">
-                      <a class="nav-link" href="pages/browse.html"><h4>Browse</h4></a>
-                  </div>
-                  <div class="col-1">
-                      <a class="nav-link" href="pages/watchList.html"><h4>Watchlist</h4></a>
-                  </div>
-                  <div class="col-5"></div>
-                  <div class="col-1">
-                      <div>
-                          <button class="btn search" type="submit">Search</button>
-                      </div> 
-                  </div>
-                  <div class="col-1">
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
-                      <img src="assets/User  icon.svg"> 
-                    </button>
-                  </div>
-                  <div class="col-1"></div>
-              </div>
-          </div>
+    <nav class="navbar navbar-expand-lg" style="background-color:#FF6969;">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/Logo.svg" alt="Logo" width="70" height="70" class="d-inline-block align-text-top">
+          
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html"><h4>Home</h4></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/browse.html"><h4>Browse</h4></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/watchlist.html"><h4>Watchlist</h4></a>
+            </li>
+          </ul>
+          <form class="d-flex align-items-center" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <img src="../assets/User  icon.svg">
+          </form>
+        </div>
       </div>
-    </div>
-  </nav>
-
+    </nav>
   <!--------------------------------------------------------------------------------------------->
   <!--Modal-->
   <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" style="background-color: #FF6969;">
           <h1 class="modal-title fs-5" id="exampleModalToggleLabel"><b>Welcome To OldieGoldie</b></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -111,7 +105,7 @@
   <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" style="background-color: #FF6969;">
           <h1 class="modal-title fs-5" id="exampleModalToggleLabel2"><b>Welcome Back to OldieGoldie</b></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -148,9 +142,9 @@
 
   <!-- Carousel -->
 
-  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div class="carousel-item active" id="movieCarousel">
         <img src="assets/The Meg 2 - Background.jpg" class="d-block w-100 background-img" alt="...">
         <div class="overlay">
           <div class="card m-5" style="max-width: 540px;">
@@ -239,8 +233,8 @@
   <!-- movie list -->
   <section>
     <div class="container">
-      <div class="row my-5">
-      <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
+      <div class="row my-5"  id="movieContainer">
+      <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2"> 
         <div class="movie-container">
           <img class="movie-block" src="assets/Grease.jpg">
           <div class="img-overlay">
@@ -358,123 +352,7 @@
       </div>
       </div>
 
-      <div class="container">
-       <div class="row my-5"> 
-        <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-          <div class="movie-container">
-            <img class="movie-block" src="assets/Grease.jpg">
-            <div class="img-overlay">
-              <h2>Grease</h2>
-              <p>Director: Something <br> Rating: PG-13</p>
-              <button type="button" class="btn">
-                <div class="row movie-links">
-                  <div class="col-8">
-                    <img class="btn-movies" src="assets/Retro-btn.svg">
-                  </div>
-                  <div class="col-4">
-                    <img class="add-btn" src="assets/Add-btn.svg">
-                  </div>
-                </div>
-              </button>
-            </div> 
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-          <div class="movie-container">
-              <img class="movie-block" src="assets/breakfast club.jpg">
-            <div class="img-overlay">
-              <h2>The Breakfast Club</h2>
-              <p>Director: Something <br> Rating: PG-13</p>
-              <button type="button" class="btn">
-                <div class="row movie-links">
-                  <div class="col-8">
-                    <img class="btn-movies" src="assets/Retro-btn.svg">
-                  </div>
-                  <div class="col-4">
-                    <img class="add-btn" src="assets/Add-btn.svg">
-                  </div>
-                </div>
-              </button>
-            </div> 
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-          <div class="movie-container">
-            <img class="movie-block" src="assets/Dirty Dancing.jpg">
-          <div class="img-overlay">
-            <h2>Dirty Dancing</h2>
-            <p>Director: Something <br> Rating: PG-13</p>
-            <button type="button" class="btn">
-              <div class="row movie-links">
-                <div class="col-8">
-                  <img class="btn-movies" src="assets/Retro-btn.svg">
-                </div>
-                <div class="col-4">
-                  <img class="add-btn" src="assets/Add-btn.svg">
-                </div>
-              </div>
-            </button>
-          </div> 
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-          <div class="movie-container">
-            <img class="movie-block" src="assets/E.T..jpg">
-          <div class="img-overlay">
-            <h2>E.T.</h2>
-            <p>Director: Something <br> Rating: PG-13</p>
-            <button type="button" class="btn">
-              <div class="row movie-links">
-                <div class="col-8">
-                  <img class="btn-movies" src="assets/Retro-btn.svg">
-                </div>
-                <div class="col-4">
-                  <img class="add-btn" src="assets/Add-btn.svg">
-                </div>
-              </div>
-            </button>
-          </div> 
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-          <div class="movie-container">
-            <img class="movie-block" src="assets/Indiana Jones.jpg">
-          <div class="img-overlay">
-            <h2>Indiana Jones</h2>
-            <p>Director: Something <br> Rating: PG-13</p>
-            <button type="button" class="btn">
-              <div class="row movie-links">
-                <div class="col-8">
-                  <img class="btn-movies" src="assets/Retro-btn.svg">
-                </div>
-                <div class="col-4">
-                  <img class="add-btn" src="assets/Add-btn.svg">
-                </div>
-              </div>
-            </button>
-          </div> 
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-          <div class="movie-container">
-            <img class="movie-block" src="assets/Back to the Future.jpg">
-          <div class="img-overlay">
-            <h2>back to The Future</h2>
-            <p>Director: Something <br> Rating: PG-13</p>
-            <button type="button" class="btn">
-              <div class="row movie-links">
-                <div class="col-8">
-                  <img class="btn-movies" src="assets/Retro-btn.svg">
-                </div>
-                <div class="col-4">
-                  <img class="add-btn" src="assets/Add-btn.svg">
-                </div>
-              </div>
-            </button>
-          </div> 
-          </div>
-         </div> 
-         </div> 
+      
         
       </section>
 
