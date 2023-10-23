@@ -13,9 +13,9 @@ form.addEventListener('submit', (event) => {
 
 function validateForm() {
     //Username 
-    if(usernameInput.ariaValueMax.trim() == ''){
+    if(usernameInput.value.trim() == ''){
         setError(usernameInput, "Name is required");
-    }else if(usernameInput.ariaValueMax.trim().length <5){
+    }else if(usernameInput.value.trim().length <5){
         setError(usernameInput, 'Name needs a minimun of 5 characters'); 
     }else{
         setSuccess(usernameInput); 
@@ -74,6 +74,4 @@ localStorage.setItem("validateForm", validateForm_serialized);
 
 let validateForm_deserialized = JSON.parse(localStorage.getItem("validatedForm"));
 
-$(document).ready(function() {
-    loadData();
-});
+console.log("validateForm", validateForm_deserialized);
