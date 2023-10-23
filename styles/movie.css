@@ -100,6 +100,8 @@ nav{
     height: fit-content;
     flex-shrink: 0;
     margin: 5% auto 2%;
+    max-width: 85%; 
+    margin-top: 130px;
 }
 
 .row1 {

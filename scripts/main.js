@@ -13,7 +13,9 @@ function createMovieCard(movie) {
                     <button type="button" class="btn">
                         <div class="row movie-links">
                             <div class="col-8">
-                                <img class="btn-movies" src="assets/Retro-btn.svg">
+                                <a href="pages/movie.html">
+                                    <img class="btn-movies" src="assets/Retro-btn.svg" onclick="c('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
+                                </a>
                             </div>
                             <div class="col-4">
                                 <img class="add-btn" src="assets/Add-btn.svg" onclick="addToWatchList('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
@@ -146,41 +148,6 @@ function addToWatchList(title,director,rating, description, genres, imageurl){
         watchList.push(temp);
         localStorage.setItem('watchList',JSON.stringify(watchList));
     }
-};
+ 
 
- // Function to populate the carousel
- function populateCarousel(movies) {
-    const carouselInner = $('#movieCarousel .carousel-inner');
-    carouselInner.empty();
-
-    movies.forEach(function (movie, index) {
-      const activeClass = index === 0 ? 'active' : '';
-      const carouselItem = `
-        <div class="carousel-item ${activeClass}">
-          <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="d-block w-100 background-img" alt="...">
-          <div class="overlay">
-            <div class="card m-5" style="max-width: 540px;">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h2 class="card-title">${movie.title}</h2>
-                    <p class="card-text">Director: ${movie.director ? movie.director : "N/A"}</p>
-                    <p>Rating: ${movie.vote_average ? movie.vote_average : "N/A"}</p>
-                    <img src="assets/Retro-btn.svg">
-                    <img src="assets/Add-btn.svg">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-      
-      carouselInner.append(carouselItem);
-    });
-  }
-=======
->>>>>>> Stashed changes
+}
