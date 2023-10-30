@@ -4,11 +4,11 @@ function createMovieCard(movie) {
     const rating = movie.vote_average ? movie.vote_average : "N/A";
 
     return `
-        <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
+        <div class="col-6 col-lg-3 col-md-4 col-xl-2 mb-3">
             <div class="movie-container">
                 <img class="movie-block" src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
                 <div class="img-overlay">
-                    <h3>${movie.title}</h3>
+                    <h4>${movie.title}</h4>
                     <p>Director: ${director} <br> Rating: ${rating}</p>
                     <button type="button" class="btn">
                         <div class="row movie-links">
@@ -28,9 +28,8 @@ function createMovieCard(movie) {
 }
 
 const apiKey = '721f6c1ba010dd467b63985221a03ae9';
-const tmdbEndpoint = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
+const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1&sort_by=popularity.desc`;
 
-// Clear the movieContainer
 const movieContainer = $('#movieContainer');
 movieContainer.empty();
 
@@ -73,6 +72,10 @@ $.ajax({
         // Create the carousel items
         const carouselInner = $('#movieCarousel .carousel-inner');
         carouselInner.empty();
+<<<<<<< Updated upstream
+=======
+        // carouselInner.empty();
+>>>>>>> Stashed changes
 
         movies.forEach(function (movie, index) {
             console.log(`Movie ${index + 1}:`);
@@ -87,7 +90,7 @@ $.ajax({
                 success: function (movieDetails) {
                     console.log(`Title: ${movie.title}`);
                     const director = movieDetails.credits.crew.find(person => person.job === "Director");
-                    console.log(`Director: ${director ? director.name : "N/A"}`);
+                    console.log(`Director: ${director}`);
                     console.log(`Description: ${movieDetails.overview}`);
                     console.log(`Viewer Rating: ${movie.vote_average}`);
                     
@@ -100,7 +103,7 @@ $.ajax({
                     // Create the movie card HTML and append it to the container
                     const movieCard = createMovieCard({
                         title: movie.title,
-                        director: director ? director.name : "N/A",
+                        director: director.name,
                         vote_average: movie.vote_average,
                         poster_path: movie.poster_path,
                         description: movieDetails.overview,

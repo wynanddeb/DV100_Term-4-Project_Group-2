@@ -39,6 +39,11 @@ nav{
     color:#BB2525;
 }
 
+.active h4{
+    color: #BB2525;
+    text-decoration: underline;
+}
+
 /* Carousel */
 
 .carousel-item{
@@ -109,7 +114,7 @@ nav{
 /* Movie Blocks */
 /* Default Styles (for mobile and tablet) */
 .movie-block {
-    width: 300px;
+    width: 100%;
     height: 340px;
     border-radius: 20px;
     transition: transform 0.3s, width 0.3s, height 0.3s;
@@ -189,12 +194,6 @@ nav{
       height: 240px; /* Adjust the size as needed for desktop */
     }
 
-    .banner{
-        width: auto;
-        height: 45px;
-        margin-bottom: -20px;
-        margin-left: -40px;
-    }
   }
   
 
