@@ -41,11 +41,9 @@ nav{
 
 .heroImage {
     height: 100vh;
-    background-image: url(/assets/movie/Movie.png);
     margin-top: -6vh;
     position: relative;
     z-index: 1;
-    background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center; /* Center horizontally */
@@ -71,9 +69,10 @@ nav{
     top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%; /* Adjust the width as needed */
-    max-width: 1200px; /* Optional: Set a maximum width if needed */
-    z-index: 1; /* Ensure it's above the hero image */
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1;
+
   }
 
 .Moviebanner img {
@@ -89,6 +88,22 @@ nav{
     margin: 0;
     color: #FFE6D0;
     font-family: 'Luckiest Guy', cursive;
+}   
+    @media (min-width:0px) {
+        .banner-text {
+            font-size: calc(12px + 0.390625vw);
+        }
+    }
+
+    @media (min-width:810px) {
+        .banner-text {
+            font-size: calc(24px + 0.390625vw);
+        }
+    }
+    @media (min-width:1440px) {
+        .banner-text {
+            font-size: calc(28px + 0.390625vw);
+        }
 }
 
 .movieContent {
@@ -132,10 +147,25 @@ nav{
     leading-trim: both;
     text-edge: cap;
     font-family: Luckiest Guy;
-    font-size: 32px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+    @media (min-width:0px) {
+        .MovieText h3 {
+            font-size: calc(24px + 0.390625vw);
+        }
+    }
+
+    @media (min-width:810px) {
+        .MovieText h3 {
+            font-size: calc(28px + 0.390625vw);
+        }
+    }
+    @media (min-width:1440px) {
+        .MovieText h3 {
+            font-size: calc(32px + 0.390625vw);
+        }
 }
 
 .MovieText h6 {
@@ -148,6 +178,22 @@ nav{
     font-weight: 400;
     line-height: normal;
 }
+@media (min-width:0px) {
+    .MovieText h6 {
+        font-size: calc(14px + 0.390625vw);
+    }
+}
+
+@media (min-width:810px) {
+    .MovieText h6 {
+        font-size: calc(16px + 0.390625vw);
+    }
+}
+@media (min-width:1440px) {
+    .MovieText h6 {
+        font-size: calc(18px + 0.390625vw);
+    }
+}
 
 .MovieText h4 {
     color: rgba(255, 230, 208, 0.90);
@@ -157,7 +203,23 @@ nav{
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;    
+    line-height: normal; 
+}
+@media (min-width:0px) {
+    .MovieText h4 {
+        font-size: calc(14px + 0.390625vw);
+    }
+}
+
+@media (min-width:810px) {
+    .MovieText h4 {
+        font-size: calc(18px + 0.390625vw);
+    }
+}
+@media (min-width:1440px) {
+    .MovieText h4 {
+        font-size: calc(22px + 0.390625vw);
+    }
 }
 
 .MovieText p {
@@ -165,17 +227,32 @@ nav{
     leading-trim: both;
     text-edge: cap;
     font-family: Lato;
-    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+@media (min-width:0px) {
+    .MovieText p {
+        font-size: calc(12px + 0.390625vw);
+    }
+}
+
+@media (min-width:810px) {
+    .MovieText p {
+        font-size: calc(16px + 0.390625vw);
+    }
+}
+@media (min-width:1440px) {
+    .MovieText p {
+        font-size: calc(20px + 0.390625vw);
+    }
 }
 
 .buttons{
     width: 100%;
     height: 15%;
-    padding: 0 10px;
-    padding-top: 10px;
+    padding-top: 5px;
+    margin-bottom: 10px;
 }
 
 .wishlistBtn{
@@ -183,27 +260,63 @@ nav{
     border-radius: 50px;
     color: #FFE6D0;
     leading-trim: both;
-    text-edge: cap;
     font-family: Lato;
-    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    padding: 8px 40px;    
+       
+    margin-right: 20px;
 }
+
+@media (min-width:0px) {
+    .wishlistBtn {
+        font-size: calc(12px + 0.390625vw);
+        padding: 8px 20px; 
+    }
+}
+
+@media (min-width:810px) {
+    .wishlistBtn {
+        font-size: calc(16px + 0.390625vw);
+        padding: 8px 30px; 
+    }
+}
+@media (min-width:1440px) {
+    .wishlistBtn {
+        font-size: calc(20px + 0.390625vw);
+        padding: 8px 40px; 
+    }
+}
+
 
 .trailerBtn{
     background-color: #007297;
     color: #FFE6D0;
     border-radius: 50px;
-    leading-trim: both;
-    text-edge: cap;
-    font-family: Lato;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     padding: 8px 40px; 
+}
+@media (min-width:0px) {
+    .trailerBtn {
+        font-size: calc(12px + 0.390625vw);
+        padding: 8px 20px; 
+    }
+}
+
+@media (min-width:810px) {
+    .trailerBtn {
+        font-size: calc(16px + 0.390625vw);
+        padding: 8px 30px; 
+    }
+}
+@media (min-width:1440px) {
+    .trailerBtn {
+        font-size: calc(20px + 0.390625vw);
+        padding: 8px 40px; 
+    }
 }
 
 /* Footer */
