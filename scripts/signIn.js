@@ -74,4 +74,4 @@ localStorage.setItem("validateForm", validateForm_serialized);
 
 let validateForm_deserialized = JSON.parse(localStorage.getItem("validatedForm"));
 
-console.log("validateForm", validateForm_deserialized);
+console.log("validateForm", validateForm);
