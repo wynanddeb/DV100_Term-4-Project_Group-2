@@ -133,6 +133,7 @@ nav{
     flex-shrink: 0;
     margin: 5% auto 2%;
     max-width: 85%; 
+    margin-top: -50px;
 }
 @media (min-width:0px) {
     .movieContent {
