@@ -1,3 +1,6 @@
+const movieContainer = $('#movieContainer');
+movieContainer.empty();
+
 // HTML template for the movie card
 function createMovieCard(movie) {
     const director = movie.director ? movie.director : "N/A";
@@ -14,7 +17,7 @@ function createMovieCard(movie) {
                         <div class="row movie-links">
                             <div class="col-8">
                                 <a href="pages/movie.html">
-                                    <img class="btn-movies" src="assets/Retro-btn.svg" onclick="addToLocalStorageAndGoToMovie('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
+                                <img class="btn-movies" src="assets/Retro-btn.svg" onclick="addToLocalStorageAndGoToMovie('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
                                 </a>
                             </div>
                             <div class="col-4">
@@ -29,9 +32,6 @@ function createMovieCard(movie) {
 
 const apiKey = '721f6c1ba010dd467b63985221a03ae9';
 const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1&sort_by=popularity.desc`;
-
-const movieContainer = $('#movieContainer');
-movieContainer.empty();
 
 // Function to create a carousel item from movie data
 function createCarouselItem(movie) {
@@ -67,11 +67,10 @@ $.ajax({
     url: tmdbEndpoint,
     method: 'GET',
     success: function (data) {
-        const movies = data.results.slice(0, 12); // Load only 12 movies
+        const movies = data.results.slice(0, 12); 
 
         // Create the carousel items
-        const carouselInner = $('#movieCarousel .carousel-inner');
-        carouselInner.empty();
+        const carouselInner = $('#movieCarousel');
 
         movies.forEach(function (movie, index) {
             console.log(`Movie ${index + 1}:`);
@@ -84,12 +83,8 @@ $.ajax({
                 url: movieDetailsEndpoint,
                 method: 'GET',
                 success: function (movieDetails) {
-                    console.log(`Title: ${movie.title}`);
                     const director = movieDetails.credits.crew.find(person => person.job === "Director");
-                    console.log(`Director: ${director}`);
-                    console.log(`Description: ${movieDetails.overview}`);
-                    console.log(`Viewer Rating: ${movie.vote_average}`);
-                    
+                                        
                     const genresArr = [];
 
                     movieDetails.genres.forEach(function(genre){
@@ -112,8 +107,8 @@ $.ajax({
                     // Create the carousel item and append it to the carousel
                     const carouselItem = createCarouselItem(movie);
                     carouselInner.append(carouselItem);
-
-                    console.log('-------------------------');
+                    $('#movieCarousel').carousel();
+                    
                 },
                 error: function (error) {
                     console.log('Error:', error);
@@ -125,6 +120,7 @@ $.ajax({
         console.log('Error:', error);
     }
 });
+
 
 function addToWatchList(title,director,rating, description, genres, imageurl){
     console.log(genres)
