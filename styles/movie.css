@@ -46,8 +46,8 @@ nav{
     z-index: 1;
     background-position: center;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
@@ -64,6 +64,23 @@ nav{
     z-index: 1;
 }
 
+@media (min-width:0px) {
+    .PlayButtonSize {
+        width: 60px;
+    }
+}
+
+@media (min-width:810px) {
+    .PlayButtonSize {
+        width: 80px;
+    }
+}
+@media (min-width:1440px) {
+    .PlayButtonSize {
+        width: 100px;
+    }
+}
+
 .Moviebanner {
     position: absolute;
     top: 100%;
@@ -72,8 +89,8 @@ nav{
     width: 90%;
     max-width: 1200px;
     z-index: 1;
-
-  }
+    margin-bottom: -50px;
+}
 
 .Moviebanner img {
     width: 100%;
@@ -116,7 +133,23 @@ nav{
     flex-shrink: 0;
     margin: 5% auto 2%;
     max-width: 85%; 
-    margin-top: 130px;
+    margin-top: -50px;
+}
+@media (min-width:0px) {
+    .movieContent {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width:810px) {
+    .movieContent {
+        margin-top: 30px;
+    }
+}
+@media (min-width:1440px) {
+    .movieContent {
+        margin-top: 50px;
+    }
 }
 
 .row1 {
@@ -263,9 +296,13 @@ nav{
     font-family: Lato;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
-       
+    line-height: normal;  
     margin-right: 20px;
+}
+
+.wishlistBtn:hover{
+    background-color: #FFE6D0;
+    color: #FF6969;
 }
 
 @media (min-width:0px) {
@@ -299,6 +336,12 @@ nav{
     line-height: normal;
     padding: 8px 40px; 
 }
+
+.trailerBtn:hover{
+    background-color: #FFE6D0;
+    color: #007297;
+}
+
 @media (min-width:0px) {
     .trailerBtn {
         font-size: calc(12px + 0.390625vw);

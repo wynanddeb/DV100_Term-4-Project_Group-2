@@ -26,7 +26,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 5%;
+    gap: 2%;
 }
 
 .banner-container{
@@ -45,17 +45,22 @@ body{
     
 }
 
+.banner-text{
+    display: none;
+}
+
 
 
 #cards-container{
     width: 100%;
-    flex-grow: 4;
+    flex-grow: 6;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
     overflow-y: scroll;
 }
+
 
 .card-content-bottom{
     display: flex;
@@ -89,20 +94,32 @@ i{
 .card{
     max-width: 85%;
     border-radius: 20px;
+    max-height: 250px;
+    position: relative;
 }
 
 .col-md-2{
     display: flex;
     justify-content: start;
     place-items: center;
-
+    position: relative;
+    max-height: 100%;
 }
 
 .col-md-2>img{
     height: 90%;
     width: auto;
     margin-left: 5px;
+    max-height: 90%;
 }
+
+.g-0{
+
+    max-height: 100%;
+    position: relative;
+
+}
+
 
 nav{
     background-color: #FF6969;
@@ -265,6 +282,7 @@ ul {
     .banner-container h1{
         color:#BB2525;
         opacity: 1;
+        display: block;
         font-size: 2.5rem;
     }
 }

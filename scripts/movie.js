@@ -1,4 +1,4 @@
-function createMovieData(title, director, rating, description, genres, imgUrl, cast, boxOffice, backdrop_path, date, length, actors) {
+function createMovieData(title, director, rating, description, genres, imgUrl, cast, boxOffice, background, date, length, actors) {
     var card = document.createElement("div");
     card.className = "cardElement";
 
@@ -7,7 +7,7 @@ function createMovieData(title, director, rating, description, genres, imgUrl, c
     card.innerHTML = `
             <div class="heroImage" style="background-image: url(https://image.tmdb.org/t/p/w500${imgUrl}); background-size: cover">
                 <div class="playButton">
-                    <img src="../assets/movie/PlayButton.svg" width="100px" height="100px">
+                    <img src="../assets/movie/PlayButton.svg" class="PlayButtonSize">
                 </div>
                 <div class="heroImageGradient"></div>
             </div>
@@ -47,24 +47,33 @@ function createMovieData(title, director, rating, description, genres, imgUrl, c
 }
 
 function loadData() {
+    document.getElementById("individaulMovie").innerHTML = ""; // Clear the previous movie card
 
-    document.getElementById("individaulMovie").innerHTML = "";
-    
-    
+    // Check if local storage contains a 'movies' key
+    if (localStorage.getItem("movies") !== null) {
+        var movies = JSON.parse(localStorage.getItem("movies"));
 
-    if (localStorage.getItem("movie") === null) {
-        return;
+        if (movies.length > 0) {
+            var selectedMovie = movies[movies.length - 1]; // Get the last added movie
+            var movieCard = createMovieData(
+                selectedMovie.title,
+                selectedMovie.director,
+                selectedMovie.rating,
+                selectedMovie.description,
+                selectedMovie.genres,
+                selectedMovie.imgUrl,
+                selectedMovie.boxOffice,
+                selectedMovie.background,
+                selectedMovie.date,
+                selectedMovie.length,
+                selectedMovie.actors
+            );
+
+            // Set the backdrop image as the hero image background
+            document.getElementById("individaulMovie").appendChild(movieCard);
+
+        }
     }
-
-    var moviesData = JSON.parse(localStorage.getItem("movie"));
-
-    moviesData.forEach(movieData => {
-
-        var movieCard = createMovieData(movieData.title, movieData.director, movieData.rating, movieData.description, movieData.genres, movieData.imgUrl, movieData.backdrop_path);
-        document.getElementById("individaulMovie").appendChild(movieCard);
-
-    });
-    document.getElementById("individaulMovie").reset();
 }
 
 $(document).ready(function() {
