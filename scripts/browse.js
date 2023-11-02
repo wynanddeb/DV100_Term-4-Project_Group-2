@@ -33,13 +33,14 @@ movieContainer.empty();
 const apiKey = '721f6c1ba010dd467b63985221a03ae9';
 
 function fetchMovies(page) {
-    const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${page}`;
+    const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&include_video=true&language=en-USappend_to_response=credits,images&page=${page}`;
 
+// API
     $.ajax({
         url: tmdbEndpoint,
         method: 'GET',
         success: function (data) {
-            const movies = data.results.slice(0, 40); // Load only 25 movies
+            const movies = data.results.slice(0, 60); // Load only 25 movies
 
             movies.forEach(function (movie, index) {
                 console.log(`Movie ${index + 1}:`);
@@ -52,12 +53,7 @@ function fetchMovies(page) {
                     url: movieDetailsEndpoint,
                     method: 'GET',
                     success: function (movieDetails) {
-                        console.log(`Title: ${movie.title}`);
-                        const director = movieDetails.credits.crew.find(person => person.job === "Director");
-                        console.log(`Director: ${director ? director.name : "N/A"}`);
-                        console.log(`Description: ${movieDetails.overview}`);
-                        console.log(`Viewer Rating: ${movie.vote_average}`);
-                        
+                        const director = movieDetails.credits.crew.find(person => person.job === "Director");                                         
                         const genresArr = [];
     
                         movieDetails.genres.forEach(function(genre){
@@ -76,30 +72,29 @@ function fetchMovies(page) {
     
                         // Append the card to the container
                         movieContainer.append(movieCard);
-    
-                        console.log('-------------------------');
-                        
+                            
                     },
                     error: function (error) {
                         console.log('Error:', error);
                     }
+                    
                 });
             });
         },
         error: function (error) {
             console.log('Error:', error);
         }
-        // Your existing code for fetching movie data goes here
-    
            
     });
 }
 
-// Fetch movies from both pages
-fetchMovies(2); // Fetch movies from page 2
-fetchMovies(3); // Fetch movies from page 3
+// Fetch movies from more pages
+fetchMovies(2); 
+fetchMovies(3); 
+fetchMovies(4); 
 
            
+// Add to Watchlist button
 
 function addToWatchList(title,director,rating, description, genres, imageurl){
     console.log(genres)
@@ -123,6 +118,8 @@ function addToWatchList(title,director,rating, description, genres, imageurl){
  
 
 }
+
+// Watch now Button
 
 function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice) {
     // Create an object with the movie data
@@ -150,6 +147,12 @@ function addToLocalStorageAndGoToMovie(title, director, rating, description, gen
 
     // Redirect to the website
     window.location.href = '../pages/movie.html';
-
     
 }
+
+// Filtering
+
+
+
+
+

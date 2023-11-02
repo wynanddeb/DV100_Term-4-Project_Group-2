@@ -53,7 +53,7 @@
   </div>
 
       <!-- Filtering and Sorting -->
-      <section class="custom-section">
+      <!-- <section class="custom-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-sm-12 custom-dropdown">
@@ -94,7 +94,62 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <div class="container">
+      <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="background-color: #FF6969;">
+        Filter
+      </a>
+    </div>
+    
+    
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="offcanvasExampleLabel">OldieGoldie</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <!-- Genre Filtering -->
+        <div class="genre-filter">
+          <h3>Genre</h3>
+          <ul class="genre-list">
+            <li><p>Action</p></li>
+            <li><p>Adventure</p></li>
+            <li><p>Animation</p></li>
+            <li><p>Comedy</p></li>
+            <li><p>Crime</p></li>
+            <li><p>Drama</p></li>
+            <li><p>Family</p></li>
+            <li><p>Fantasy</p></li>
+            <li><p>Horror</p></li>
+            <li><p>Thriller</p></li>
+          </ul>
+        </div>
+        <!-- Year Filtering -->
+        <div class="year-filter">
+          <h4>Genre</h4>
+          <ul class="year-list">
+            <li><p>1970</p></li>
+            <li><p>1980</p></li>
+            <li><p>1990</p></li>
+            <li><p>2000</p></li>
+            <li><p>2001</p></li>
+          </ul>
+        </div>
+        <!-- IMBD score Filtering -->
+        <div class="imbd-filter">
+          <h4>Genre</h4>
+          <ul class="imbd-list">
+            <li><p>7+</p></li>
+            <li><p>8+</p></li>
+            <li><p>9+</p></li>
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
 
    <!-- Movie List -->
    <section>

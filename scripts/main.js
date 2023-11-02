@@ -39,6 +39,7 @@ function createCarouselItem(movie) {
     const rating = movie.vote_average ? movie.vote_average : "N/A";
 
     return `
+    <div class="carousel-inner">
         <div class="carousel-item">
             <img src="https://image.tmdb.org/t/p/w500${movie.backdrop_path}" class="d-block w-100 background-img" alt="...">
             <div class="overlay">
@@ -59,6 +60,7 @@ function createCarouselItem(movie) {
                     </div>
                 </div>
             </div>
+        </div>
         </div>`;
 }
 
@@ -70,14 +72,14 @@ $.ajax({
         const movies = data.results.slice(0, 12); 
 
         // Create the carousel items
-        const carouselInner = $('#movieCarousel');
+        const carouselInner = $('#movieCarousel .carousel-item');
 
         movies.forEach(function (movie, index) {
             console.log(`Movie ${index + 1}:`);
             console.log(`Title: ${movie.title}`);
 
             const movieId = movie.id;
-            const movieDetailsEndpoint = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US&append_to_response=credits,images`;
+            const movieDetailsEndpoint = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US&append_to_response=credits,imagesen-US&page=1`;
 
             $.ajax({
                 url: movieDetailsEndpoint,
@@ -145,7 +147,7 @@ function addToWatchList(title,director,rating, description, genres, imageurl){
 
 }
 
-function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice) {
+function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice,) {
     // Create an object with the movie data
     const temp = {
         'title': title,
