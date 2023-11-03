@@ -28,7 +28,7 @@ function createMovieCard(movie) {
 }
 
 const apiKey = '721f6c1ba010dd467b63985221a03ae9';
-const tmdbEndpoint = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
+const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
 
 // Clear the movieContainer
 const movieContainer = $('#movieContainer');
@@ -185,7 +185,37 @@ function addToWatchList(title,director,rating, description, genres, imageurl){
 
 }
 
-function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice,) {
+function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice) {
+    // Create an object with the movie data
+    const temp = {
+        'title': title,
+        'director': director,
+        'rating': rating,
+        'description': description,
+        'genres': genres,
+        'imgUrl': imageurl,
+        'actors': cast,
+        'box-office': boxOffice
+    };
+
+    // Check if local storage already contains a 'movie' key
+    if (localStorage.getItem('movie') === null) {
+        // If not, create a new array and add the movie data
+        localStorage.setItem('movie', JSON.stringify([temp]));
+    } else {
+        // If it exists, retrieve the existing data, add the new movie data, and update local storage
+        const movie = JSON.parse(localStorage.getItem('movie'));
+        movie.push(temp);
+        localStorage.setItem('movie', JSON.stringify(movie));
+    }
+
+    // Redirect to the website
+    window.location.href = 'pages/movie.html';
+
+    
+}
+
+function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice) {
     // Create an object with the movie data
     const temp = {
         'title': title,
