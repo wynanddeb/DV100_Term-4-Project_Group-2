@@ -14,7 +14,7 @@ function createMovieCard(movie) {
                         <div class="row movie-links">
                             <div class="col-8">
                                 <a href="pages/movie.html">
-                                    <img class="btn-movies" src="assets/Retro-btn.svg" onclick="c('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
+                                    <img class="btn-movies" src="assets/Retro-btn.svg" onclick="addToLocalStorageAndGoToMovie('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
                                 </a>
                             </div>
                             <div class="col-4">
@@ -28,17 +28,48 @@ function createMovieCard(movie) {
 }
 
 const apiKey = '721f6c1ba010dd467b63985221a03ae9';
-const tmdbEndpoint = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
+const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
 
 // Clear the movieContainer
 const movieContainer = $('#movieContainer');
 movieContainer.empty();
+
+let itemCounter = -1;
 
 // Function to create a carousel item from movie data
 function createCarouselItem(movie) {
     const director = movie.director ? movie.director : "N/A";
     const rating = movie.vote_average ? movie.vote_average : "N/A";
 
+    itemCounter++;
+
+    if (itemCounter === 0){
+
+        return `
+        <div class="carousel-item active">
+            <img src="https://image.tmdb.org/t/p/w500${movie.backdrop_path}" class="d-block w-100 background-img" alt="...">
+            <div class="overlay">
+                <div class="card m-5" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2 class="card-title">${movie.title}</h2>
+                                <p class="card-text">Director: ${director}</p>
+                                <p>Rating: ${rating}</p>
+                                <img src="assets/Retro-btn.svg">
+                                <img src="assets/Add-btn.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    
     return `
         <div class="carousel-item">
             <img src="https://image.tmdb.org/t/p/w500${movie.backdrop_path}" class="d-block w-100 background-img" alt="...">
@@ -61,6 +92,7 @@ function createCarouselItem(movie) {
                 </div>
             </div>
         </div>`;
+
 }
 
 // API
@@ -71,7 +103,7 @@ $.ajax({
         const movies = data.results.slice(0, 12); // Load only 12 movies
 
         // Create the carousel items
-        const carouselInner = $('#movieCarousel .carousel-inner');
+        const carouselInner = $('.carousel-inner');
         carouselInner.empty();
 
         movies.forEach(function (movie, index) {
@@ -126,7 +158,7 @@ $.ajax({
         console.log('Error:', error);
     }
 });
-<<<<<<< Updated upstream
+
 
 
 function addToWatchList(title,director,rating, description, genres, imageurl){
@@ -150,4 +182,34 @@ function addToWatchList(title,director,rating, description, genres, imageurl){
     }
  
 
+}
+
+function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice) {
+    // Create an object with the movie data
+    const temp = {
+        'title': title,
+        'director': director,
+        'rating': rating,
+        'description': description,
+        'genres': genres,
+        'imgUrl': imageurl,
+        'actors': cast,
+        'box-office': boxOffice
+    };
+
+    // Check if local storage already contains a 'movie' key
+    if (localStorage.getItem('movie') === null) {
+        // If not, create a new array and add the movie data
+        localStorage.setItem('movie', JSON.stringify([temp]));
+    } else {
+        // If it exists, retrieve the existing data, add the new movie data, and update local storage
+        const movie = JSON.parse(localStorage.getItem('movie'));
+        movie.push(temp);
+        localStorage.setItem('movie', JSON.stringify(movie));
+    }
+
+    // Redirect to the website
+    window.location.href = 'pages/movie.html';
+
+    
 }
