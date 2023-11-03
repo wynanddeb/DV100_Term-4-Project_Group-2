@@ -14,7 +14,7 @@ function createMovieCard(movie) {
                         <div class="row movie-links">
                             <div class="col-8">
                                 <a href="pages/movie.html">
-                                    <img class="btn-movies" src="assets/Retro-btn.svg" onclick="c('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
+                                    <img class="btn-movies" src="assets/Retro-btn.svg" onclick="addToLocalStorageAndGoToMovie('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
                                 </a>
                             </div>
                             <div class="col-4">
