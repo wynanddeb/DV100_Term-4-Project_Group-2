@@ -14,7 +14,7 @@ function createMovieCard(movie) {
                         <div class="row movie-links">
                             <div class="col-8">
                                 <a href="pages/movie.html">
-                                    <img class="btn-movies" src="assets/Retro-btn.svg" onclick="c('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
+                                    <img class="btn-movies" src="assets/Retro-btn.svg" onclick="addToLocalStorageAndGoToMovie('${movie.title}','${director}','${rating}','${movie.description}','${movie.genres}','${movie.poster_path}')">
                                 </a>
                             </div>
                             <div class="col-4">
@@ -28,8 +28,7 @@ function createMovieCard(movie) {
 }
 
 const apiKey = '721f6c1ba010dd467b63985221a03ae9';
-const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&include_video=true&language=en-USappend_to_response=credits,images&page=1`;
-const genreListUrl = 'https://api.themoviedb.org/3/genre/movie/list?language=en';
+const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
 
 // Clear the movieContainer
 const movieContainer = $('#movieContainer');
@@ -72,7 +71,6 @@ function createCarouselItem(movie) {
 
     
     return `
-    <div class="carousel-inner">
         <div class="carousel-item">
             <img src="https://image.tmdb.org/t/p/w500${movie.backdrop_path}" class="d-block w-100 background-img" alt="...">
             <div class="overlay">
@@ -93,7 +91,6 @@ function createCarouselItem(movie) {
                     </div>
                 </div>
             </div>
-        </div>
         </div>`;
 
 }
@@ -106,14 +103,15 @@ $.ajax({
         const movies = data.results.slice(0, 12); // Load only 12 movies
 
         // Create the carousel items
-        const carouselInner = $('#movieCarousel .carousel-item');
+        const carouselInner = $('.carousel-inner');
+        carouselInner.empty();
 
         movies.forEach(function (movie, index) {
             console.log(`Movie ${index + 1}:`);
             console.log(`Title: ${movie.title}`);
 
             const movieId = movie.id;
-            const movieDetailsEndpoint = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US&append_to_response=credits,imagesen-US&page=1&`;
+            const movieDetailsEndpoint = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US&append_to_response=credits,images`;
 
             $.ajax({
                 url: movieDetailsEndpoint,
@@ -215,91 +213,3 @@ function addToLocalStorageAndGoToMovie(title, director, rating, description, gen
 
     
 }
-
-function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice) {
-    // Create an object with the movie data
-    const temp = {
-        'title': title,
-        'director': director,
-        'rating': rating,
-        'description': description,
-        'genres': genres,
-        'imgUrl': imageurl,
-        'actors': cast,
-        'box-office': boxOffice
-    };
-
-    // Check if local storage already contains a 'movie' key
-    if (localStorage.getItem('movie') === null) {
-        // If not, create a new array and add the movie data
-        localStorage.setItem('movie', JSON.stringify([temp]));
-    } else {
-        // If it exists, retrieve the existing data, add the new movie data, and update local storage
-        const movie = JSON.parse(localStorage.getItem('movie'));
-        movie.push(temp);
-        localStorage.setItem('movie', JSON.stringify(movie));
-    }
-
-    // Redirect to the website
-    window.location.href = 'pages/movie.html';
-
-    
-}
-
-// Filtering
-function filterMoviesByGenre(genreId) {
-    $.ajax({
-        url: movieListEndpoint,
-        method: 'GET',
-        data: {
-            api_key: apiKey,
-            with_genres: genreId, // Filter by the selected genre
-        },
-        success: function (data) {
-            const movies = data.results;
-
-            // Process and display the filtered movies
-            // You can use your existing code to display movies here
-        },
-        error: function (error) {
-            console.log('Error fetching movies by genre:', error);
-        },
-    });
-}
-
-const genreCheckboxes = document.getElementById('genreFilter');
-
-// Add event listeners to the genre checkboxes
-genreCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', filterMoviesByGenres);
-});
-
-// Function to filter movies based on selected genres
-function filterMoviesByGenres() {
-    const selectedGenres = [];
-
-    // Loop through the genre checkboxes to find the selected genres
-    genreCheckboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-            selectedGenres.push(checkbox.value);
-        }
-    });
-
-    // Perform filtering based on selected genres
-    const allMovies = document.querySelectorAll('.movie'); // Adjust the selector based on your HTML structure
-
-    allMovies.forEach(movie => {
-        const movieGenres = movie.dataset.genres.split(',');
-
-        if (selectedGenres.length === 0 || selectedGenres.some(genre => movieGenres.includes(genre))) {
-            movie.style.display = 'block';
-        } else {
-            movie.style.display = 'none';
-        }
-    });
-}
-
-
-
-
-

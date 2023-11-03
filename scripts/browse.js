@@ -32,6 +32,8 @@ movieContainer.empty();
 
 const apiKey = '721f6c1ba010dd467b63985221a03ae9';
 
+
+
 function fetchMovies(page) {
     const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&include_video=true&language=en-USappend_to_response=credits,images&page=${page}`;
 
@@ -150,7 +152,63 @@ function addToLocalStorageAndGoToMovie(title, director, rating, description, gen
     
 }
 
-// Filtering
+// -------------------------------------
+// Fetch Genres
+
+let genreArray = [];
+
+const genrePromise = fetch('https://api.themoviedb.org/3/genre/movie/list?language=en')
+.then(response => response.json())
+.then(data => {
+    let genreArrayData = data;
+    genreArray = genreArrayData.genres;
+})
+.catch(err => console.error(err))
+
+// --------------------------------------
+// Filter
+
+$(document).ready(function() {
+
+    genrePromise.then(() => {
+        const option = document.getElementById('genreFilter');
+        option.value = movie.id;
+        option.text = movie.name;
+        select.appendChild(option);
+    })
+})
+
+function displayGenre(){
+
+    let selectedGenreValue = ""
+    let selectedYearValue = ""
+    let selectedImbdScore = ""
+
+    let selectGenre = document.getElementById('genreFilter');
+    let selectedGenre = selectGenre.option[selectGenre.selectedIndex].value;
+
+    let selectYear = document.getElementById('genreFilter');
+    let selectedYear = selectYear.option[selectYear.selectedIndex].value;
+
+    let selectScore = document.getElementById('genreFilter');
+    let selectedScore = selectScore.option[selectScore.selectedIndex].value;
+
+    if(selectedGenre === ""){
+    } else{
+        selectedGenreValue = "&with_genres=" + selectGenre;
+    }
+
+    if(selectedYear === ""){
+    } else{
+        selectedYearValue = "&primary_release_year=" + selectYear;
+    }
+
+    if(selectedScore === ""){
+    } else{
+        selectedImbdScore = "&vote_average.gte=" + selectScore;
+    }
+}
+
 
 
 
