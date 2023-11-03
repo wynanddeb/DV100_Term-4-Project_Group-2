@@ -37,7 +37,9 @@
           </ul>
           <form class="d-flex align-items-center" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <img src="../assets/User  icon.svg">
+            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" style="background-color:#FF6969; border-color: #FF6969;">
+              <img src="../assets/User  icon.svg">
+            </button>
           </form>
         </div>
       </div>
@@ -53,37 +55,45 @@
         </div>
 
         <!--form-->
-      <form id="signUpForm" method="GET">
+      <form id="signinForm" action="/">
         <div class="modal-body" style="background-color: #FFE6D0;">
 
           <!--Username input-->
-          <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label"><b>Username:</b></label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Username" name="username" required>
-            <div class="invalid-feedback">Please enter a valid Username</div>
+          <div class="input-control" id="input-control">
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label"><b>Username:</b></label>
+              <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+              <div class="error"></div>
+            </div>
           </div>
 
           <!--Email input-->
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label"><b>Email:</b></label>
-            <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
-            <div class="invalid-feedback">Please enter a valid email address</div>
+          <div class="input-control" id="input-control">
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label"><b>Email:</b></label>
+              <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+              <div class="error"></div>
+            </div>
           </div>
 
           <!--Password input-->
-          <div class="mb-3">
-            <label for="formGroupExampleInput3" class="form-label"><b>Password:</b></label>
-            <input type="password" class="form-control" id="password" minlength="7" placeholder="Password" name="password" required>
-            <div class="invalid-feedback">Password invalid</div>
+          <div class="input-control" id="input-control">
+            <div class="mb-3">
+              <label for="formGroupExampleInput3" class="form-label"><b>Password:</b></label>
+              <input type="password" class="form-control" id="password" minlength="7" placeholder="Password" name="password" required>
+              <div class="invalid-feedback">Password invalid</div>
+            </div>
           </div>
 
           <!--Confirm password input-->
-          <div class="mb-3">
-            <label for="formGroupExampleInput4" class="form-label"><b>Confirm Password:</b></label>
-            <input type="password" class="form-control" id="confirm-password" minlength="7" placeholder="Confirm Password" name="confirmpassword" required>
-            <div class="invalid-feedback">Password invalid</div>
+          <div class="input-control" id="input-control">
+            <div class="mb-3">
+              <label for="formGroupExampleInput4" class="form-label"><b>Confirm Password:</b></label>
+              <input type="password" class="form-control" id="password2" minlength="7" placeholder="Confirm Password" name="password2" required>
+              <div class="invalid-feedback">Password invalid</div>
+            </div>
           </div>
-
+        
           <!--Toggle between sign in and up-->
           <div class="Link" style="margin-top: 30px; margin-bottom: 10px; margin-left: 10px;">
             <label>Already have an account?
@@ -92,14 +102,8 @@
           </div>
         </div>
 
-        <!--Modal Footer-->
-        <div class="modal-footer" style="background-color: #63AD9E;">
-          <button class="btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
-            <img src="assets/signIn-btn.svg">
-          </button>
-        </div>
         <!--Submit Button-->
-        <button class="btn btn-light mt-4" type="submit" style="margin-left: 140px; margin-bottom: 20px;">
+        <button class="btn btn-light mt-4" type="submit" id="submit" style="margin-left: 140px; margin-bottom: 20px;">
           <img src="assets/signIn-btn.svg">
         </button>
       </form>
@@ -117,26 +121,29 @@
         </div>
 
         <!--Form-->
-        <form id="signInForm" method="GET">
+        <form id="signupForm" action="/">
         <div class="modal-body" style="background-color: #FFE6D0;">
 
           <!--Username input-->
-          <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label"><b>Username:</b></label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Username" name="username" required>
-            <div class="invalid-feedback">Please enter a valid Username</div>
+          <div class ="input-control" id="input-control">
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label"><b>Username:</b></label>
+              <input type="text" class="form-control" id="username1" placeholder="Username" name="username1" required>
+              <div class="invalid-feedback">Please enter a valid Username</div>
+            </div>
           </div>
-
+       
           <!--Password input-->
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label"><b>Password:</b></label>
-            <input type="password" class="form-control" id="password" minlength="7" placeholder="Password" name="password" required>
-            <div class="invalid-feedback">Password invalid</div>
+          <div class="input-control" id="input-control">
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label"><b>Password:</b></label>
+              <input type="password" class="form-control" id="password1" minlength="7" placeholder="Password" name="password1" required>
+              <div class="invalid-feedback">Password invalid</div>
+            </div>
           </div>
-        </div>
 
         <!--Submit Button-->
-        <button class="btn btn-light mt-4" type="submit" style="margin-left: 140px; margin-bottom: 20px;">
+        <button class="btn btn-light mt-4" type="submit" id="submit1" style="margin-left: 140px; margin-bottom: 20px;">
           <img src="assets/signIn-btn.svg">
         </button>
       </form>
