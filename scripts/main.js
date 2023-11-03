@@ -112,7 +112,7 @@ $.ajax({
             console.log(`Title: ${movie.title}`);
 
             const movieId = movie.id;
-            const movieDetailsEndpoint = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US&append_to_response=credits,imagesen-US&page=1`;
+            const movieDetailsEndpoint = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US&append_to_response=credits,imagesen-US&page=1&`;
 
             $.ajax({
                 url: movieDetailsEndpoint,
