@@ -53,7 +53,7 @@
   </div>
 
       <!-- Filtering and Sorting -->
-      <section class="custom-section">
+      <!-- <section class="custom-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-sm-12 custom-dropdown">
@@ -94,128 +94,104 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <div class="container">
+      <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="background-color: #FF6969;">
+        Filter
+      </a>
+    </div>
+    
+    
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="offcanvasExampleLabel">OldieGoldie</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <!-- Genre Filtering -->
+        <div class="genre-filter">
+          <h3>Genre</h3>
+          <ul class="genre-list">
+            <input type="text" class="btn-check" name="filter" id="genreFilter" autocomplete="off" value="28" checked>
+            <label class="genre-list" for="allTrips"><p>Action</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="genreFilter" autocomplete="off" value="12" checked>
+            <label class="genre-list" for="allTrips"><p>Adventure</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="genreFilter" autocomplete="off" value="16" checked>
+            <label class="genre-list" for="allTrips"><p>Animation</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="genreFilter" autocomplete="off" value="35" checked>
+            <label class="genre-list" for="allTrips"><p>Comedy</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="genreFilter" autocomplete="off" value="80" checked>
+            <label class="genre-list" for="allTrips"><p>Crime</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="genreFilter" autocomplete="off" value="18" checked>
+            <label class="genre-list" for="allTrips"><p>Drama</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="genreFilter" autocomplete="off" value="10 751" checked>
+            <label class="genre-list" for="allTrips"><p>Family</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="genreFilter" autocomplete="off" value="14" checked>
+            <label class="genre-list" for="allTrips"><p>Fantasy</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="genreFilter" autocomplete="off" value="27" checked>
+            <label class="genre-list" for="allTrips"><p>Horror</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="genreFilter" autocomplete="off" value="53" checked>
+            <label class="genre-list" for="allTrips"><p>Thriller</p></label> 
+          </ul>
+        </div>
+
+        <!-- Year Filtering -->
+        <div class="year-filter">
+          <h4>Year</h4>
+          <ul class="year-list">
+            <input type="text" class="btn-check" name="filter" id="yearFilter" autocomplete="off" value="1970" checked>
+            <label class="genre-list" for="allTrips"><p>1970</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="yearFilter" autocomplete="off" value="1980" checked>
+            <label class="genre-list" for="allTrips"><p>1980</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="yearFilter" autocomplete="off" value="1990" checked>
+            <label class="genre-list" for="allTrips"><p>1990</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="yearFilter" autocomplete="off" value="2000" checked>
+            <label class="genre-list" for="allTrips"><p>2000</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="yearFilter" autocomplete="off" value="2001" checked>
+            <label class="genre-list" for="allTrips"><p>2001</p></label> 
+          </ul>
+        </div>
+
+        <!-- IMBD score Filtering -->
+        <div class="imbd-filter">
+          <h4>IMBD score</h4>
+          <ul class="imbd-list">
+            <input type="text" class="btn-check" name="filter" id="imbdFilter" autocomplete="off" value="7" checked>
+            <label class="genre-list" for="allTrips"><p>7+</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="imbdFilter" autocomplete="off" value="8" checked>
+            <label class="genre-list" for="allTrips"><p>8+</p></label>
+            <br>
+            <input type="text" class="btn-check" name="filter" id="imbdFilter" autocomplete="off" value="9" checked>
+            <label class="genre-list" for="allTrips"><p>9+</p></label> 
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
 
    <!-- Movie List -->
    <section>
     <div class="container">
       <div class="row my-5"   id="movieContainer">
-      <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-        <div class="movie-container">
-          <img class="movie-block" src="../assets/Grease.jpg">
-          <div class="img-overlay">
-            <h2>Grease</h2>
-            <p>Director: Something <br> Rating: PG-13</p>
-
-            <button type="button" class="btn">
-              <div class="row movie-links">
-                <div class="col-8">
-                  <img class="btn-movies" src="../assets/Retro-btn.svg">
-                </div>
-                <div class="col-4">
-                  <img class="add-btn" src="../assets/Add-btn.svg">
-                </div>
-              </div>
-            </button>
-
-          </div> 
-        </div>
-      </div>
-      <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-        <div class="movie-container">
-            <img class="movie-block" src="../assets/breakfast club.jpg">
-          <div class="img-overlay">
-            <h2>The Breakfast Club</h2>
-            <p>Director: Something <br> Rating: PG-13</p>
-            <button type="button" class="btn">
-              <div class="row movie-links">
-                <div class="col-8">
-                  <img class="btn-movies" src="../assets/Retro-btn.svg">
-                </div>
-                <div class="col-4">
-                  <img class="add-btn" src="../assets/Add-btn.svg">
-                </div>
-              </div>
-            </button>
-          </div> 
-        </div>
-      </div>
-      <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-        <div class="movie-container">
-          <img class="movie-block" src="../assets/Dirty Dancing.jpg">
-        <div class="img-overlay">
-          <h2>Dirty Dancing</h2>
-          <p>Director: Something <br> Rating: PG-13</p>
-          <button type="button" class="btn">
-            <div class="row movie-links">
-              <div class="col-8">
-                <img class="btn-movies" src="../assets/Retro-btn.svg">
-              </div>
-              <div class="col-4">
-                <img class="add-btn" src="../assets/Add-btn.svg">
-              </div>
-            </div>
-          </button>
-        </div> 
-        </div>
-      </div>
-      <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-        <div class="movie-container">
-          <img class="movie-block" src="../assets/E.T..jpg">
-        <div class="img-overlay">
-          <h2>E.T.</h2>
-          <p>Director: Something <br> Rating: PG-13</p>
-          <button type="button" class="btn">
-            <div class="row movie-links">
-              <div class="col-8">
-                <img class="btn-movies" src="../assets/Retro-btn.svg">
-              </div>
-              <div class="col-4">
-                <img class="add-btn" src="../assets/Add-btn.svg">
-              </div>
-            </div>
-          </button>
-        </div> 
-        </div>
-      </div>
-      <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-        <div class="movie-container">
-          <img class="movie-block" src="../assets/Indiana Jones.jpg">
-        <div class="img-overlay">
-          <h2>Indiana Jones</h2>
-          <p>Director: Something <br> Rating: PG-13</p>
-          <button type="button" class="btn">
-            <div class="row movie-links">
-              <div class="col-8">
-                <a href="pages/movie.html"><img class="btn-movies" src="../assets/Retro-btn.svg"></a>
-              </div>
-              <div class="col-4">
-                <img class="add-btn" src="../assets/Add-btn.svg">
-              </div>
-            </div>
-          </button>
-        </div> 
-        </div>
-      </div>
-      <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
-        <div class="movie-container">
-          <img class="movie-block" src="../assets/Back to the Future.jpg">
-        <div class="img-overlay">
-          <h2>back to The Future</h2>
-          <p>Director: Something <br> Rating: PG-13</p>
-          <button type="button" class="btn">
-            <div class="row movie-links">
-              <div class="col-8">
-                <img class="btn-movies" src="../assets/Retro-btn.svg">
-              </div>
-              <div class="col-4">
-                <img class="add-btn" src="../assets/Add-btn.svg">
-              </div>
-            </div>
-          </button>
-        </div> 
-        </div>
-      </div>
+      
+        <!-- Append Movie Container -->
       </div>
     </div>
          

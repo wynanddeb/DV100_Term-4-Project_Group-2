@@ -301,15 +301,19 @@ ul {
     background-color: #F6E9DC;
     color: black;
     border-color: #BB2525;
-    margin-bottom: 10px;
+    margin: 0; /* Remove margin */
+    padding: 0.375rem 0.75rem; /* Add padding for button */
 }
 
 .custom-dropdown .dropdown-menu {
     background-color: #F6E9DC;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
 }
 
 .custom-dropdown .dropdown-item {
     color: black;
+    padding: 0.5rem 1rem; /* Add padding for dropdown items */
 }
 
 .custom-dropdown .dropdown-item:hover {
@@ -321,6 +325,8 @@ ul {
     background-color: #F6E9DC;
     border-color: #BB2525;
     color: black;
+    margin: 0; /* Remove margin */
+    padding: 0.375rem 0.75rem; /* Add padding for button */
 }
 
 .custom-button:hover {
@@ -333,4 +339,58 @@ ul {
     background-color: #BB2525;
     color: white;
 }
+/* Filter Try 2 */
+
+.offcanvas-title{
+    color:#BB2525;
+}
+
+.offcanvas{
+    background-color: #63AD9E;
+}
+.genre-filter{
+    margin-left: 5vh;
+}
+
+.genre-list p{
+    list-style: none;
+    margin-left: 2vh;
+    font-size: 20px;
+}
+
+.genre-list p:hover{
+    font-style: oblique;
+    cursor: pointer;
+}
+
+.year-filter{
+    margin-left: 5vh;
+}
+
+.year-list li{
+    list-style: none;
+    margin-left: 2vh;
+    font-size: 20px;
+}
+
+.year-list li:hover{
+    font-style: oblique;
+    cursor: pointer;
+}
+
+.imbd-filter{
+    margin-left: 5vh;
+}
+
+.imbd-list li{
+    list-style: none;
+    margin-left: 2vh;
+    font-size: 20px;
+}
+
+.imbd-list li:hover{
+    font-style: oblique;
+    cursor: pointer;
+}
+
 
