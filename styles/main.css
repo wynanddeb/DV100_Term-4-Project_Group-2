@@ -352,13 +352,13 @@ ul {
     margin-left: 5vh;
 }
 
-.genre-list li{
+.genre-list p{
     list-style: none;
     margin-left: 2vh;
     font-size: 20px;
 }
 
-.genre-list li:hover{
+.genre-list p:hover{
     font-style: oblique;
     cursor: pointer;
 }

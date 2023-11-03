@@ -28,7 +28,8 @@ function createMovieCard(movie) {
 }
 
 const apiKey = '721f6c1ba010dd467b63985221a03ae9';
-const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
+const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&include_video=true&language=en-USappend_to_response=credits,images&page=1`;
+const genreListUrl = 'https://api.themoviedb.org/3/genre/movie/list?language=en';
 
 // Clear the movieContainer
 const movieContainer = $('#movieContainer');
@@ -244,3 +245,61 @@ function addToLocalStorageAndGoToMovie(title, director, rating, description, gen
 
     
 }
+
+// Filtering
+function filterMoviesByGenre(genreId) {
+    $.ajax({
+        url: movieListEndpoint,
+        method: 'GET',
+        data: {
+            api_key: apiKey,
+            with_genres: genreId, // Filter by the selected genre
+        },
+        success: function (data) {
+            const movies = data.results;
+
+            // Process and display the filtered movies
+            // You can use your existing code to display movies here
+        },
+        error: function (error) {
+            console.log('Error fetching movies by genre:', error);
+        },
+    });
+}
+
+const genreCheckboxes = document.getElementById('genreFilter');
+
+// Add event listeners to the genre checkboxes
+genreCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', filterMoviesByGenres);
+});
+
+// Function to filter movies based on selected genres
+function filterMoviesByGenres() {
+    const selectedGenres = [];
+
+    // Loop through the genre checkboxes to find the selected genres
+    genreCheckboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            selectedGenres.push(checkbox.value);
+        }
+    });
+
+    // Perform filtering based on selected genres
+    const allMovies = document.querySelectorAll('.movie'); // Adjust the selector based on your HTML structure
+
+    allMovies.forEach(movie => {
+        const movieGenres = movie.dataset.genres.split(',');
+
+        if (selectedGenres.length === 0 || selectedGenres.some(genre => movieGenres.includes(genre))) {
+            movie.style.display = 'block';
+        } else {
+            movie.style.display = 'none';
+        }
+    });
+}
+
+
+
+
+
