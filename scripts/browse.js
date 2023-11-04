@@ -33,10 +33,15 @@ movieContainer.empty();
 const apiKey = '721f6c1ba010dd467b63985221a03ae9';
 
 
+let selectedGenreValue = "";
+let selectedYearValue = "";
+let selectedImbdScore = "";
+
+
 
 function fetchMovies(page) {
-    const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&include_video=true&language=en-USappend_to_response=credits,images&page=${page}`;
-
+    const tmdbEndpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&include_video=true&language=en-USappend_to_response=credits,images&page=${page}${selectedYearValue}${selectedGenreValue}${selectedImbdScore}`;
+    movieContainer.empty();
 // API
     $.ajax({
         url: tmdbEndpoint,
@@ -178,39 +183,38 @@ $(document).ready(function() {
     })
 })
 
-function displayGenre(){
-
-    let selectedGenreValue = ""
-    let selectedYearValue = ""
-    let selectedImbdScore = ""
-
-    let selectGenre = document.getElementById('genreFilter');
-    let selectedGenre = selectGenre.option[selectGenre.selectedIndex].value;
-
-    let selectYear = document.getElementById('genreFilter');
-    let selectedYear = selectYear.option[selectYear.selectedIndex].value;
-
-    let selectScore = document.getElementById('genreFilter');
-    let selectedScore = selectScore.option[selectScore.selectedIndex].value;
-
-    if(selectedGenre === ""){
-    } else{
-        selectedGenreValue = "&with_genres=" + selectGenre;
-    }
-
-    if(selectedYear === ""){
-    } else{
-        selectedYearValue = "&primary_release_year=" + selectYear;
-    }
-
-    if(selectedScore === ""){
-    } else{
-        selectedImbdScore = "&vote_average.gte=" + selectScore;
-    }
+function displayGenre(genreNumber){
+    selectedGenreValue="";
+    [...document.getElementsByClassName('genre')].forEach((el) => {
+        el.style.color = 'white';
+    });
+      
+    document.getElementById('genre-'+genreNumber).style.color = '#BB2525';
+    selectedGenreValue = "&with_genres=" + genreNumber;
+    fetchMovies(1);
 }
 
+function displayYear(yearNumber){
+    selectedYearValue="";
+    [...document.getElementsByClassName('year')].forEach((el) => {
+        el.style.color = 'white';
+    });
+      
+    document.getElementById('year-'+yearNumber).style.color = '#BB2525';
+    selectedYearValue = "&primary_release_year=" + yearNumber;
+    fetchMovies(1);
+}
 
-
+function displayScore(scoreNumber){
+    selectedImbdScore="";
+    [...document.getElementsByClassName('score')].forEach((el) => {
+        el.style.color = 'white';
+    });
+      
+    document.getElementById('score-'+scoreNumber).style.color = '#BB2525';
+    selectedImbdScore = "&vote_average.gte=" + scoreNumber;
+    fetchMovies(1);
+}
 
 
 
