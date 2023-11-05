@@ -79,6 +79,7 @@ function fetchMovies(page) {
     
                         // Append the card to the container
                         movieContainer.append(movieCard);
+
                             
                     },
                     error: function (error) {
@@ -128,8 +129,8 @@ function addToWatchList(title,director,rating, description, genres, imageurl){
 
 // Watch now Button
 
-function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice, backdrop_path, movieId) {
-    // Create an object with the movie data, including the ID
+function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice, id) {
+    // Create an object with the movie data
     const temp = {
         'title': title,
         'director': director,
