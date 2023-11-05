@@ -107,6 +107,7 @@ $.ajax({
         carouselInner.empty();
 
         movies.forEach(function (movie, index) {
+            console.log(`Id: ${movie.id}`);
             console.log(`Movie ${index + 1}:`);
             console.log(`Title: ${movie.title}`);
 
@@ -117,6 +118,7 @@ $.ajax({
                 url: movieDetailsEndpoint,
                 method: 'GET',
                 success: function (movieDetails) {
+                    console.log(`Id: ${movie.id}`);
                     console.log(`Title: ${movie.title}`);
                     const director = movieDetails.credits.crew.find(person => person.job === "Director");
                     console.log(`Director: ${director ? director.name : "N/A"}`);
@@ -196,7 +198,6 @@ function addToLocalStorageAndGoToMovie(title, director, rating, description, gen
         'actors': cast,
         'box-office': boxOffice,
         'backdrop_path': backdrop_path,
-        'movieId': movieId, // Add the movie ID
     };
 
     // Check if local storage already contains a 'movies' key
