@@ -123,8 +123,8 @@ function addToWatchList(title,director,rating, description, genres, imageurl){
 
 // Watch now Button
 
-function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice) {
-    // Create an object with the movie data
+function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice, backdrop_path, movieId) {
+    // Create an object with the movie data, including the ID
     const temp = {
         'title': title,
         'director': director,
@@ -133,23 +133,23 @@ function addToLocalStorageAndGoToMovie(title, director, rating, description, gen
         'genres': genres,
         'imgUrl': imageurl,
         'actors': cast,
-        'box-office': boxOffice
+        'box-office': boxOffice,
+        'backdrop_path': backdrop_path,
     };
 
-    // Check if local storage already contains a 'movie' key
-    if (localStorage.getItem('movie') === null) {
+    // Check if local storage already contains a 'movies' key
+    if (localStorage.getItem('movies') === null) {
         // If not, create a new array and add the movie data
-        localStorage.setItem('movie', JSON.stringify([temp]));
+        localStorage.setItem('movies', JSON.stringify([temp]));
     } else {
         // If it exists, retrieve the existing data, add the new movie data, and update local storage
-        const movie = JSON.parse(localStorage.getItem('movie'));
-        movie.push(temp);
-        localStorage.setItem('movie', JSON.stringify(movie));
+        const movies = JSON.parse(localStorage.getItem('movies'));
+        movies.push(temp);
+        localStorage.setItem('movies', JSON.stringify(movies));
     }
 
     // Redirect to the website
     window.location.href = '../pages/movie.html';
-    
 }
 
 // -------------------------------------
