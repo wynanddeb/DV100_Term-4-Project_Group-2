@@ -1,4 +1,4 @@
-function createMovieData(title, director, rating, description, genres, imgUrl, cast, boxOffice, background, date, length, actors) {
+function createMovieData(title, director, rating, description, genres, imgUrl, cast, boxOffice, background, date, length, actors, id) {
     var card = document.createElement("div");
     card.className = "cardElement";
 
@@ -40,11 +40,13 @@ function createMovieData(title, director, rating, description, genres, imgUrl, c
                     </div>        
                 </div>
             </div>
+
             
     `;
 
     return card;
 }
+
 
 function loadData() {
     document.getElementById("individaulMovie").innerHTML = ""; // Clear the previous movie card
@@ -68,6 +70,7 @@ function loadData() {
                 selectedMovie.length,
                 selectedMovie.actors
             );
+            
 
             // Set the backdrop image as the hero image background
             document.getElementById("individaulMovie").appendChild(movieCard);

@@ -4,7 +4,7 @@ function createMovieCard(movie) {
     const rating = movie.vote_average ? movie.vote_average : "N/A";
 
     return `
-        <div class="col-sm-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
+        <div class="col-6 col-lg-3 col-md-4 col-xl-3 mb-3 col-xxl-2">
             <div class="movie-container">
                 <img class="movie-block" src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
                 <div class="img-overlay">
