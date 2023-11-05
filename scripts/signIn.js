@@ -1,77 +1,63 @@
-const form = document.querySelector('#signUpForm');
-const usernameInput = document.querySelector('username'); 
-const emailInput = document.querySelector('email'); 
-const passwordInput = document.querySelector('password'); 
-const confirmPasswordInput = document.querySelector('confirm-password'); 
+//Sign in form validation 
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault(); 
+document.addEventListener("DOMContentLoaded", function () {
+  const signinFormInput = document.getElementById("signinForm");
+  const username1Input = document.getElementById("username1");
+  const password1Input = document.getElementById("password1");
+  const submit = document.getElementById("submit");
 
-    validateForm();
+  submit.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const username1 = username1Input.value;
+    const password1 = password1Input.value;
 
+    const userData = JSON.parse(localStorage.getItem("signinForm")) || [];
+
+    const user = signinForm.find((signinForm) => signinForm.username1 === username1 && signinForm.password1 === password1);
+
+    if (user) {
+      localStorage.setItem("isSignedIn", "true");
+
+      window.location.href = "index.html";
+    } else {
+      alert("Invalid email or password.");
+    }
+  });
+
+  if (localStorage.getItem("isSignedIn") === "true") {
+
+    window.location.href = "index.html";
+  }
 });
 
-function validateForm() {
-    //Username 
-    if(usernameInput.value.trim() == ''){
-        setError(usernameInput, "Name is required");
-    }else if(usernameInput.value.trim().length <5){
-        setError(usernameInput, 'Name needs a minimun of 5 characters'); 
-    }else{
-        setSuccess(usernameInput); 
-    }
-    //Email 
-    if(emailInput.value.trim() == ''){
-        setError(emailInput, "Provide email address");
-    }else if(isEmailValid(emailInput.value)){
-        setSuccess(emailInput);
-    }else {
-        setError(emailInput, 'Provide a valid email address');
-    }
-    //Password
-    if(passwordInput.value.trim() == ''){
-        setError(passwordInput, 'Please enter a password');
-    }else if (passwordInput.value.trim().length <5){
-        setError(passwordInput, 'Password must be longer than 5 characters');
-    }else {
-        setSuccess(passwordInput);
-    }
-    //Confirm Password 
-    if(confirmPasswordInput.value.trim() == ''){
-        setError(passwordInput, 'Please enter a password');
-    }else if (confirmPasswordInput.value !== passwordInput.value){
-        setError(confirmPasswordInput, 'Password does not match'); 
-    }else {
-        setSuccess(confirmPasswordInput);
-    }
-}
+//sign up form validation 
 
-function setError(element, errorMessage){
-    const parent = element.parentElement; 
-    if(parent.classList.conatains('success')){
-        parent.classList.remove('success');
-    }
-    parent.classList.add('error');
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const signupForm = document.querySelector("signupForm");
 
-function setSuccess(element){
-    const parent = element.parentElement;
-    if(parent.classList.contains('error')){
-        parent.classlist.remove('error'); 
-    }
-    parent.classList.add('success');
-}
+  submit.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-function isEmailValid(element){
-    const reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return reg.test(email);
-}
+      const usernameInput = document.querySelector("input[name='Username']");
+      const emailInput = document.querySelector("input[name='email']");
+      const passwordInput = document.querySelector("input[name='password']");
+      const password2Input = document.querySelector("input[name='password2']");
 
-//local storage 
-let validateForm_serialized = JSON.stringify(validateForm);
+      const username = usernameInput.value;
+      const email = emailInput.value;
+      const password = passwordInput.value;
+      const password2 = password2Input.value;
 
-localStorage.setItem("validateForm", validateForm_serialized);
+      if (username.trim() === "" || email.trim() === "" || password.trim() === "" || password2.trim() === "") {
+          alert("Please fill in all the required fields");
+          return;
+      }
 
-let validateForm_deserialized = JSON.parse(localStorage.getItem("validatedForm"));
+      if (password !== password2) {
+          alert("Passwords are not the same");
+          return;
+      }
 
-console.log("validateForm", validateForm);
+      window.location.href = "index.html";
+  });
+});
