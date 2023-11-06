@@ -13,9 +13,9 @@ saveUserData = () => {
   });
 
   console.log(userData);
-  document.getElementById("signinForm").reset(); // Fix the form id here
+  // document.getElementById("signinForm").reset(); // Fix the form id here
 
   let data = JSON.stringify(userData);
   localStorage.setItem('order', data);
-  window.location.href = 'index.html'
+  // window.location.href = 'index.html'
 }

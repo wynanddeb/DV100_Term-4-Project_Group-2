@@ -129,8 +129,8 @@ function addToWatchList(title,director,rating, description, genres, imageurl){
 
 // Watch now Button
 
-function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice, id) {
-    // Create an object with the movie data
+function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice, backdrop_path) {
+    // Create an object with the movie data, including the ID
     const temp = {
         'title': title,
         'director': director,
@@ -156,6 +156,8 @@ function addToLocalStorageAndGoToMovie(title, director, rating, description, gen
 
     // Redirect to the website
     window.location.href = '../pages/movie.html';
+
+    
 }
 
 // -------------------------------------
