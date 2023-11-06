@@ -218,3 +218,23 @@ function addToLocalStorageAndGoToMovie(title, director, rating, description, gen
 
     
 }
+
+// user details
+
+displayUserData = () => {
+    let data = JSON.parse(localStorage.getItem(userData));
+    let items = document.getElementById('nameDisplay')
+
+    for(let i = 0; i < userData.length; i++){
+
+    let username = data[i].username
+
+    items.innerHTML += `
+    <h1 class="welcoming">Welcome ${username}, rediscover your favourite classics</h1>
+    `
+
+    }
+    console.log(username)
+
+    return card
+}
