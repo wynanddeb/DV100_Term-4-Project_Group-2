@@ -23,6 +23,9 @@ function createMovieCard(title, director, rating, description, genres, imgUrl) {
               <div class="genres">
                 ${genresList}
             </div>
+            <a href="movie.html">
+            <img class="btn-movies" src="../assets/Retro-btn.svg" onclick="addToLocalStorageAndGoToMovie('${title}','${director}','${rating}','${description}','${genres}','${imgUrl}')">
+            </a>
                 <div class="delete" onclick="deleteMovie('${title}')">
                   <i class="fa fa-remove fa-2x"></i>
                 </div>
@@ -33,6 +36,30 @@ function createMovieCard(title, director, rating, description, genres, imgUrl) {
     `;
 
     return card;
+}
+
+function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice, backdrop_path, movieId) {
+
+  const temp = {
+      'title': title,
+      'director': director,
+      'rating': rating,
+      'description': description,
+      'genres': genres,
+      'imgUrl': imageurl,
+      'actors': cast,
+      'box-office': boxOffice,
+      'backdrop_path': backdrop_path,
+  };
+
+  if (localStorage.getItem('movies') === null) {
+      localStorage.setItem('movies', JSON.stringify([temp]));
+  } else {
+      const movies = JSON.parse(localStorage.getItem('movies'));
+      movies.push(temp);
+      localStorage.setItem('movies', JSON.stringify(movies));
+  }
+  window.location.href = 'movie.html';
 }
 
 function deleteMovie(title){

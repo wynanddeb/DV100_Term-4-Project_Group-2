@@ -217,5 +217,18 @@ function displayScore(scoreNumber){
     fetchMovies(1);
 }
 
-
-
+function allFilter(){
+    selectedGenreValue="";
+    selectedYearValue="";
+    selectedImbdScore="";
+    [...document.getElementsByClassName('genre')].forEach((el) => {
+        el.style.color = 'white';
+    });
+    [...document.getElementsByClassName('year')].forEach((el) => {
+        el.style.color = 'white';
+    });
+    [...document.getElementsByClassName('score')].forEach((el) => {
+        el.style.color = 'white';
+    });
+    fetchMovies(1);
+}
