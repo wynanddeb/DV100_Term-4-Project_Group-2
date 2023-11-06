@@ -94,7 +94,7 @@ i{
 .card{
     max-width: 85%;
     border-radius: 20px;
-    max-height: 250px;
+    max-height: none;
     position: relative;
 }
 
@@ -238,6 +238,9 @@ ul {
         height: 55px;
         margin-bottom: -20px;
     }
+    .card{
+        max-height: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -246,6 +249,9 @@ ul {
         height: 45px;
         margin-bottom: -20px;
         margin-left: -40px;
+    }
+    .card{
+        max-height: none;
     }
 }
 
@@ -261,6 +267,9 @@ ul {
     }
     #cards-container{
         flex-grow: 7;
+    }
+    .card{
+        max-height: none;
     }
 }
 
@@ -284,5 +293,9 @@ ul {
         opacity: 1;
         display: block;
         font-size: 2.5rem;
+    }
+    
+    .card{
+        max-height: none;
     }
 }
