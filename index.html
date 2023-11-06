@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/main.css">
 
 </head>
-<body>
+<body onload="displayUserData()">
 
   <header class="header">
 
@@ -38,7 +38,7 @@
           <form class="d-flex align-items-center" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           
-            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+            <button class="btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
               <img src="assets/User  icon.svg">
             </button>
           </form>
@@ -179,7 +179,15 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-  
+
+ 
+<section>
+  <div class="container">
+    <div id="nameDisplay">
+      <h1 class="welcoming">Welcome KaylaposOW, rediscover your favourite classics</h1>
+    </div>
+  </div>
+</section>
 
     
 <!-- Banner -->
@@ -189,6 +197,7 @@
       <h1>Top Rated Movies</h1>
     </div>
   </div>
+
 
   <!-- movie list -->
   <section>

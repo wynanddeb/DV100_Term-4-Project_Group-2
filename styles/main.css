@@ -393,4 +393,9 @@ ul {
     cursor: pointer;
 }
 
-
+.welcoming{
+    color:#BB2525;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-left: 100px;
+}
