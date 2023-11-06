@@ -1,5 +1,5 @@
 // HTML template for the movie card
-function createMovieCard(movie) {
+function createMovieCard(movie, id) {
     const director = movie.director ? movie.director : "N/A";
     const rating = movie.vote_average ? movie.vote_average : "N/A";
 
@@ -144,6 +144,8 @@ $.ajax({
                     // Append the card to the movieContainer
                     movieContainer.append(movieCard);
 
+                    console.log(movie.id)
+
                     // Create the carousel item and append it to the carousel
                     const carouselItem = createCarouselItem(movie);
                     carouselInner.append(carouselItem);
@@ -186,7 +188,7 @@ function addToWatchList(title,director,rating, description, genres, imageurl){
 
 }
 
-function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice, backdrop_path, movieId) {
+function addToLocalStorageAndGoToMovie(title, director, rating, description, genres, imageurl, cast, boxOffice, backdrop_path) {
     // Create an object with the movie data, including the ID
     const temp = {
         'title': title,
